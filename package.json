@@ -1,0 +1,64 @@
+{
+  "homepage": "https://Rabia0s.github.io/clive-christian-clone",
+  "name": "Hecate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "ajv": "^6.12.6",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.6",
+    "i18next": "^22.4.14",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^12.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.7.1",
+    "react-scripts": "5.0.1",
+    "react-tsparticles": "^1.43.1",
+    "swiper": "^11.2.10",
+    "tsparticles": "^1.43.1",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "npm-force-resolutions": "^0.0.3"
+  },
+  "resolutions": {
+    "ajv": "6.12.6"
+  }
+}

@@ -1,0 +1,166 @@
+/* ProductCard.css - Ultra Minimal */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.badge.limited {
+  background: rgba(138, 43, 226, 0.9);
+}
+
+.badge.new {
+  background: rgba(255, 107, 107, 0.9);
+}
+
+.product-info {
+  padding: 1.2rem;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #1a1a1a;
+}
+
+.product-type {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.add-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.add-btn:hover {
+  background: #333;
+  transform: scale(1.1);
+}
+
+.add-btn.adding {
+  background: #666;
+  transform: scale(0.95);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-info {
+    padding: 1rem;
+  }
+  
+  .product-title {
+    font-size: 0.95rem;
+  }
+  
+  .current-price {
+    font-size: 1rem;
+  }
+  
+  .add-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+/* ProductCard.css - Minimal Güncelleme */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+  position: relative;
+}
+
+/* Mevcut stillere ek */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Diğer stiller aynı kalıyor */

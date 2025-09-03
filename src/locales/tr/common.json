@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "event": "Etkinlikler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "menuToggle": "Menüyü aç/kapat",
+    "logoAlt": "Hecate Logosu"
+  },
+  "search": {
+    "placeholder": "Ara..."
+  },
+  "products": {
+    "title": "Koleksiyonumuz",
+    "classic_collection": "Klasik Koleksiyon",
+    "premium_collection": "Premium Koleksiyon",
+    "limited_edition": "Sınırlı Sayıda Üretim",
+    "gift_set": "Lüks Hediye Seti",
+    "view_details": "Detayları Gör",
+    "add_to_cart": "Sepete Ekle",
+    "born_in_bottle": "Bir Şişede Doğan"
+  },
+  "brandValues": {
+    "title": "Temel Değerlerimiz",
+    "subtitle": "Yarattığımız her şeye rehberlik eden ilkeler",
+    "handmade": "İngiltere'de El Yapımı",
+    "handmade_desc": "Küçük Partiler Halinde",
+    "handmade_details": "Her bir parfümümüz, İngiltere'deki uzman zanaatkarlarımız tarafından özenle ve küçük partiler halinde üretilir.",
+    "conscious": "Bilinçli Üretim",
+    "conscious_desc": "Sürdürülebilir & Etik",
+    "conscious_details": "Sürdürülebilir kaynaklardan gelen malzemeler ve etik üretim süreçleriyle çevreye saygılı lüks parfümler.",
+    "independent": "Bağımsız",
+    "independent_desc": "Kadın Sahipli & İşletme",
+    "independent_details": "Bağımsız bir kadın girişimi olarak, tutku ve özgünlükle yönetilen bir marka olmaktan gurur duyuyoruz.",
+    "premium": "Premium Kalite",
+    "premium_desc": "Olağanüstü İçerikler",
+    "premium_details": "En nadide ve kaliteli hammaddeleri kullanarak eşsiz bir koku deneyimi sunuyoruz.",
+    "artisan": "Zanaatkar İşi",
+    "artisan_desc": "Usta Parfümörler",
+    "artisan_details": "Usta parfümörlerimiz, her bir şişeye sanat eseri titizliğiyle yaklaşır.",
+    "global": "Küresel İlham",
+    "global_desc": "Dünya Çapında Tedarik",
+    "global_details": "Dünyanın dört bir yanından ilham alarak evrensel bir koku kütüphanesi oluşturuyoruz.",
+    "footer": "2023'ten beri tutku ve amaçla olağanüstü kokular yaratıyoruz"
+  }
+}

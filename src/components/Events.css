@@ -1,0 +1,295 @@
+.events-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.events-header h1 {
+  font-family: "Didot LT W01 Headline", "Didot", "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.events-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.events-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.events-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.events-tabs button.active {
+  color: #a1865e;
+  font-weight: 600;
+}
+
+.events-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a1865e;
+}
+
+.events-tabs button:hover:not(.active) {
+  color: #a1865e;
+}
+
+/* Yaklaşan Workshoplar */
+.upcoming-workshops {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.workshop-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-5px);
+}
+
+.workshop-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.workshop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workshop-card:hover .workshop-image img {
+  transform: scale(1.05);
+}
+
+.workshop-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #a1865e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.workshop-details {
+  padding: 20px;
+}
+
+.workshop-details h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.workshop-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.workshop-meta span {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.workshop-meta span::before {
+  content: '•';
+  margin-right: 5px;
+  color: #a1865e;
+}
+
+.workshop-description {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.workshop-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-weight: 600;
+  color: #a1865e;
+  font-size: 1.1rem;
+}
+
+.capacity {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #a1865e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #8a6f4d;
+}
+
+.no-events {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+/* Geçmiş Workshoplar */
+.past-workshops {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.past-workshop-card {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.past-workshop-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.workshop-date {
+  color: #a1865e;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.workshop-gallery {
+  margin-top: 25px;
+}
+
+.workshop-gallery h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.workshop-video {
+  margin-top: 25px;
+}
+
+.workshop-video h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .events-page {
+    padding: 20px 15px;
+  }
+  
+  .events-header h1 {
+    font-size: 2rem;
+  }
+  
+  .upcoming-workshops {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .workshop-meta {
+    flex-direction: column;
+  }
+}

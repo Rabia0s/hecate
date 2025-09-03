@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "event": "Events",
+    "about": "About Us",
+    "contact": "Contact",
+    "menuToggle": "Toggle menu",
+    "logoAlt": "Hecate Logo"
+  },
+  "search": {
+    "placeholder": "Search..."
+  },
+  "products": {
+    "title": "Collection",
+    "classic_collection": "Classic Collection",
+    "premium_collection": "Premium Collection",
+    "limited_edition": "Limited Edition",
+    "gift_set": "Luxury Gift Set",
+    "view_details": "View Details",
+    "add_to_cart": "Add to Cart",
+    "born_in_bottle": "Born in a Bottle"
+  },
+  "brandValues": {
+    "title": "Our Core Values",
+    "subtitle": "The principles that guide everything we create",
+    "handmade": "Handmade in the UK",
+    "handmade_desc": "in Small Batches",
+    "handmade_details": "Each of our perfumes is carefully crafted by our expert artisans in the UK in small batches.",
+    "conscious": "Consciously Crafted",
+    "conscious_desc": "Sustainable & Ethical",
+    "conscious_details": "Luxury perfumes that respect the environment with materials from sustainable sources and ethical production processes.",
+    "independent": "Independently",
+    "independent_desc": "Female Owned & Operated",
+    "independent_details": "As an independent women's initiative, we are proud to be a brand managed with passion and authenticity.",
+    "premium": "Premium Quality",
+    "premium_desc": "Exceptional Ingredients",
+    "premium_details": "We offer a unique scent experience using the rarest and highest quality raw materials.",
+    "artisan": "Artisan Crafted",
+    "artisan_desc": "Master Perfumers",
+    "artisan_details": "Our master perfumers approach each bottle with the meticulousness of a work of art.",
+    "global": "Global Inspiration",
+    "global_desc": "Worldwide Sourcing",
+    "global_details": "We create a universal scent library inspired from all over the world.",
+    "footer": "Crafting exceptional fragrances with passion and purpose since 2023"
+  }
+}
