@@ -13,12 +13,12 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: "Imperial Majesty",
+      title: "Torchlight",
       gender: "Unisex",
       concentration: "Extrait de Parfum",
       price: 2150,
       originalPrice: 2500,
-      image: "https://images.pexels.com/photos/3831748/pexels-photo-3831748.jpeg",
+      image: process.env.PUBLIC_URL + "/images/products/IMG_0770.jpg", // Yerel dosya yolu
       notes: ["Saffron", "Jasmine", "Vanilla"],
       limitedEdition: true,
       discount: 14,
@@ -27,11 +27,11 @@ const Products = () => {
     },
     {
       id: 2,
-      title: "X Woman",
+      title: "Violet Sorcery",
       gender: "Woman",
       concentration: "Eau de Parfum",
       price: 980,
-      image: "https://images.pexels.com/photos/4735906/pexels-photo-4735906.jpeg",
+      image: process.env.PUBLIC_URL + "/images/products/IMG_0769.jpg", // Yerel dosya yolu
       notes: ["Bergamot", "Vetiver", "Amber"],
       limitedEdition: false,
       isNew: true,
@@ -39,11 +39,11 @@ const Products = () => {
     },
     {
       id: 3,
-      title: "Royal Oud",
+      title: "Crossroads",
       gender: "Man",
       concentration: "Eau de Parfum",
       price: 1250,
-      image: "https://images.pexels.com/photos/4041389/pexels-photo-4041389.jpeg",
+      image: process.env.PUBLIC_URL + "/images/products/IMG_0771.jpg", // Yerel dosya yolu
       notes: ["Oud", "Sandalwood", "Bergamot"],
       limitedEdition: false,
       isNew: false,

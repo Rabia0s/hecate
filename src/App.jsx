@@ -51,41 +51,15 @@ const App = () => {
   const signatureCollections = [
     {
       id: 1,
-      title: "Torchlight",
-      gender: "Unisex",
-      concentration: "Extrait de Parfum",
+      title: 'No.1 Imperial Majesty',
       price: 2150,
-      originalPrice: 2500,
-      image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg",
-      notes: ["Saffron", "Jasmine", "Vanilla"],
-      limitedEdition: true,
-      discount: 14,
-      isNew: false,
-      rating: 4.8
+      image: '/images/no1-imperial.jpg'
     },
     {
       id: 2,
-      title: "Violet Sorcery",
-      gender: "Woman",
-      concentration: "Eau de Parfum",
+      title: 'X for Men',
       price: 980,
-      image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg",
-      notes: ["Bergamot", "Vetiver", "Amber"],
-      limitedEdition: false,
-      isNew: true,
-      rating: 4.5
-    },
-    {
-      id: 3,
-      title: "Crossroads",
-      gender: "Man",
-      concentration: "Eau de Parfum",
-      price: 1250,
-      image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg",
-      notes: ["Oud", "Sandalwood", "Bergamot"],
-      limitedEdition: false,
-      isNew: false,
-      rating: 4.7
+      image: '/images/x-men.jpg'
     }
   ];
 
@@ -107,7 +81,7 @@ const App = () => {
               title="Parfüm Sanatı"
             />
             <BrandValues />
-            <Products  // ✅ BU SATIRI EKLİYORUM
+            <Products 
               products={signatureCollections} 
               onAddToCart={addToCart}
             />
