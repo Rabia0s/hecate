@@ -5,8 +5,8 @@ function VideoBanner() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isLoading, setIsLoading] = useState(true);
 
-  // YouTube video ID'si - URL'den alınan kısım
-  const youtubeVideoId = "kO66qBMg4Ac"; // ← BURAYI DEĞİŞTİRDİM
+ // YouTube video ID'si - YENİ LINK
+  const youtubeVideoId = "d6zsqBSvzIc"; // ← BURAYI GÜNCELLEYİN
 
   // YouTube embed URL'si oluştur
   const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&modestbranding=1&rel=0`;
