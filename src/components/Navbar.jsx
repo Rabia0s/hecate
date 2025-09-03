@@ -10,47 +10,7 @@ const Products = () => {
   const [showComingSoon, setShowComingSoon] = useState(true);
   const scrollContainerRef = useRef(null);
 
-  const products = [
-    {
-      id: 1,
-      title: "Imperial Majesty",
-      gender: "Unisex",
-      concentration: "Extrait de Parfum",
-      price: 2150,
-      originalPrice: 2500,
-      image: `${process.env.PUBLIC_URL}/images/IMG_0769.jpg`, // YENİ FORMAT
-      notes: ["Saffron", "Jasmine", "Vanilla"],
-      limitedEdition: true,
-      discount: 14,
-      isNew: false,
-      rating: 4.8
-    },
-    {
-      id: 2,
-      title: "X Woman",
-      gender: "Woman",
-      concentration: "Eau de Parfum",
-      price: 980,
-      image: `${process.env.PUBLIC_URL}/images/IMG_0770.jpg`, // YENİ FORMAT
-      notes: ["Bergamot", "Vetiver", "Amber"],
-      limitedEdition: false,
-      isNew: true,
-      rating: 4.5
-    },
-    {
-      id: 3,
-      title: "Royal Oud",
-      gender: "Man",
-      concentration: "Eau de Parfum",
-      price: 1250,
-      image: `${process.env.PUBLIC_URL}/images/IMG_0771.jpg`, // YENİ FORMAT
-      notes: ["Oud", "Sandalwood", "Bergamot"],
-      limitedEdition: false,
-      isNew: false,
-      rating: 4.7
-    }
-  ];
-
+  
   const filteredProducts = useMemo(() => {
     if (activeFilter === 'all') return products;
     if (activeFilter === 'men') return products.filter(p => p.gender === 'Man' || p.gender === 'Unisex');
