@@ -10,46 +10,47 @@ const Products = () => {
   const [showComingSoon, setShowComingSoon] = useState(true);
   const scrollContainerRef = useRef(null);
 
-  const signatureCollections = [
-  {
-    id: 1,
-    title: "Torchlight",
-    gender: "Unisex",
-    concentration: "Extrait de Parfum",
-    price: 2150,
-    originalPrice: 2500,
-    image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg",
-    notes: ["Saffron", "Jasmine", "Vanilla"],
-    limitedEdition: true,
-    discount: 14,
-    isNew: false,
-    rating: 4.8
-  },
-  {
-    id: 2,
-    title: "Violet Sorcery",
-    gender: "Woman",
-    concentration: "Eau de Parfum",
-    price: 980,
-    image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg",
-    notes: ["Bergamot", "Vetiver", "Amber"],
-    limitedEdition: false,
-    isNew: true,
-    rating: 4.5
-  },
-  {
-    id: 3,
-    title: "Crossroads",
-    gender: "Man",
-    concentration: "Eau de Parfum",
-    price: 1250,
-    image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg",
-    notes: ["Oud", "Sandalwood", "Bergamot"],
-    limitedEdition: false,
-    isNew: false,
-    rating: 4.7
-  }
-];
+  const products = [
+    {
+      id: 1,
+      title: "Torchlight",
+      gender: "Unisex",
+      concentration: "Extrait de Parfum",
+      price: 2150,
+      originalPrice: 2500,
+      image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg", // Yerel dosya yolu
+      notes: ["Saffron", "Jasmine", "Vanilla"],
+      limitedEdition: true,
+      discount: 14,
+      isNew: false,
+      rating: 4.8
+    },
+    {
+      id: 2,
+      title: "Violet Sorcery",
+      gender: "Woman",
+      concentration: "Eau de Parfum",
+      price: 980,
+      image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg", // Yerel dosya yolu
+      notes: ["Bergamot", "Vetiver", "Amber"],
+      limitedEdition: false,
+      isNew: true,
+      rating: 4.5
+    },
+    {
+      id: 3,
+      title: "Crossroads",
+      gender: "Man",
+      concentration: "Eau de Parfum",
+      price: 1250,
+      image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg", // Yerel dosya yolu
+      notes: ["Oud", "Sandalwood", "Bergamot"],
+      limitedEdition: false,
+      isNew: false,
+      rating: 4.7
+    }
+    // Daha fazla ürün zamanla eklenecek
+  ];
 
   const filteredProducts = useMemo(() => {
     if (activeFilter === 'all') return products;
