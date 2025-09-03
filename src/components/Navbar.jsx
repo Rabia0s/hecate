@@ -1,223 +1,186 @@
-import React, { useState, useEffect } from 'react';
+// Products.js - Ürün Yayınlama Bildirimi Eklendi
+import React, { useState, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import './Navbar.css';
+import ProductCard from './ProductCard';
+import './Products.css';
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const { t, i18n } = useTranslation();
+const Products = () => {
+  const { t } = useTranslation();
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [showComingSoon, setShowComingSoon] = useState(true);
+  const scrollContainerRef = useRef(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add('menu-open');
-    } else {
-      document.body.classList.remove('menu-open');
-    }
-    return () => document.body.classList.remove('menu-open');
-  }, [menuOpen]);
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log('Searching for:', searchQuery);
-    setMenuOpen(false);
-  };
-  
-  const toggleSubmenu = (itemKey) => {
-    if (activeSubmenu === itemKey) {
-      setActiveSubmenu(null);
-    } else {
-      setActiveSubmenu(itemKey);
-    }
-  };
-
-  // Çeviriler için menü öğeleri
-  const menuItems = [
-    { key: 'home', path: '#home' },
-    { 
-      key: 'products', 
-      path: '#products',
-      submenu: [
-        { key: 'product1', path: '#product1' },
-        { key: 'product2', path: '#product2' },
-        { key: 'product3', path: '#product3' }
-      ]
+  const products = [
+    {
+      id: 1,
+      title: "Imperial Majesty",
+      gender: "Unisex",
+      concentration: "Extrait de Parfum",
+      price: 2150,
+      originalPrice: 2500,
+      image: `${process.env.PUBLIC_URL}/images/IMG_0769.jpg`, // YENİ FORMAT
+      notes: ["Saffron", "Jasmine", "Vanilla"],
+      limitedEdition: true,
+      discount: 14,
+      isNew: false,
+      rating: 4.8
     },
-    { key: 'event', path: '#event' },
-    { key: 'about', path: '#about' },
-    { key: 'contact', path: '#contact' }
+    {
+      id: 2,
+      title: "X Woman",
+      gender: "Woman",
+      concentration: "Eau de Parfum",
+      price: 980,
+      image: `${process.env.PUBLIC_URL}/images/IMG_0770.jpg`, // YENİ FORMAT
+      notes: ["Bergamot", "Vetiver", "Amber"],
+      limitedEdition: false,
+      isNew: true,
+      rating: 4.5
+    },
+    {
+      id: 3,
+      title: "Royal Oud",
+      gender: "Man",
+      concentration: "Eau de Parfum",
+      price: 1250,
+      image: `${process.env.PUBLIC_URL}/images/IMG_0771.jpg`, // YENİ FORMAT
+      notes: ["Oud", "Sandalwood", "Bergamot"],
+      limitedEdition: false,
+      isNew: false,
+      rating: 4.7
+    }
   ];
 
-  return (
-    <>
-      {/* Mobile Menu Overlay */}
-      <div className={`fullscreen-overlay ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>
-        <div className="menu-content" onClick={(e) => e.stopPropagation()}>
-          {/* Language Selector in Mobile Menu */}
-          <div className="mobile-language-buttons">
-            <button
-              onClick={() => i18n.changeLanguage('tr')}
-              className={i18n.language === 'tr' ? 'active' : ''}
-            >
-              TR
-            </button>
-            <span className="divider">|</span>
-            <button
-              onClick={() => i18n.changeLanguage('en')}
-              className={i18n.language === 'en' ? 'active' : ''}
-            >
-              EN
-            </button>
-          </div>
+  const filteredProducts = useMemo(() => {
+    if (activeFilter === 'all') return products;
+    if (activeFilter === 'men') return products.filter(p => p.gender === 'Man' || p.gender === 'Unisex');
+    if (activeFilter === 'women') return products.filter(p => p.gender === 'Woman' || p.gender === 'Unisex');
+    if (activeFilter === 'new') return products.filter(p => p.isNew);
+    return products;
+  }, [activeFilter]);
 
-          {/* Mobile Search */}
-          <form onSubmit={handleSearch} className="mobile-search-form">
-            <div className="mobile-search-container">
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                className="mobile-search-input"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                autoFocus
-              />
-              <button type="submit" className="mobile-search-button">
-                <SearchIcon />
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 320;
+      scrollContainerRef.current.scrollBy({ 
+        left: direction * scrollAmount, 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
+  return (
+    <section className="products-section">
+      <div className="container">
+        <div className="section-header">
+          <div className="header-content">
+            <h1 className="section-title">{t('products.title', 'Parfümler')}</h1>
+          </div>
+          
+          <div className="controls">
+            <div className="filters">
+              <button 
+                className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveFilter('all')}
+              >
+                Tümü
+              </button>
+              <button 
+                className={`filter-btn ${activeFilter === 'men' ? 'active' : ''}`}
+                onClick={() => setActiveFilter('men')}
+              >
+                Erkek
+              </button>
+              <button 
+                className={`filter-btn ${activeFilter === 'women' ? 'active' : ''}`}
+                onClick={() => setActiveFilter('women')}
+              >
+                Kadın
               </button>
             </div>
-          </form>
+          </div>
+        </div>
 
-          <ul className="fullscreen-menu">
-            {menuItems.map((item) => (
-              <li key={item.key}>
-                <div className="mobile-menu-item-container">
-                  <a href={item.path} onClick={() => setMenuOpen(false)}>
-                    {t(`navbar.${item.key}`)}
-                  </a>
-                  {item.submenu && (
-                    <button 
-                      className={`mobile-submenu-toggle ${activeSubmenu === item.key ? 'active' : ''}`}
-                      onClick={() => toggleSubmenu(item.key)}
-                    >
-                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1 1L6 6L11 1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                      </svg>
-                    </button>
-                  )}
-                </div>
-                {item.submenu && activeSubmenu === item.key && (
-                  <ul className="mobile-submenu">
-                    {item.submenu.map((subItem) => (
-                      <li key={subItem.key}>
-                        <a href={subItem.path} onClick={() => setMenuOpen(false)}>
-                          {t(`navbar.${subItem.key}`)}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
+        {/* Ürün Yayınlama Bildirimi */}
+        {showComingSoon && (
+          <div className="coming-soon-notice">
+            <div className="notice-content">
+              <span className="notice-icon">🎯</span>
+              <div className="notice-text">
+                <p>Daha fazla özel parfüm yakında yayınlanacak.</p>
+                <small>Koleksiyonumuz zamanla genişliyor, takipte kalın.</small>
+              </div>
+              <button 
+                className="notice-close"
+                onClick={() => setShowComingSoon(false)}
+                aria-label="Bildirimi kapat"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
+        
+        <div className="products-scroll-wrapper">
+          <button 
+            className="nav-btn left" 
+            onClick={() => scroll(-1)}
+            aria-label="Önceki ürünler"
+          >
+            ←
+          </button>
+          
+          <div className="products-scroll-container" ref={scrollContainerRef}>
+            <div className="products-scroll">
+              {filteredProducts.map((product, index) => (
+                <ProductCard 
+                  key={product.id} 
+                  product={product}
+                  index={index}
+                />
+              ))}
+              
+              {/* Yakında Gelecek Ürün Yer Tutucular */}
+              {filteredProducts.length < 4 && (
+                <>
+                  <div className="coming-soon-card">
+                    <div className="coming-soon-placeholder">
+                      <div className="placeholder-icon">⏳</div>
+                      <h3>Yakında</h3>
+                      <p>Yeni parfümler geliyor</p>
+                    </div>
+                  </div>
+                  
+                  <div className="coming-soon-card">
+                    <div className="coming-soon-placeholder">
+                      <div className="placeholder-icon">✨</div>
+                      <h3>Yakında</h3>
+                      <p>Özel koleksiyon</p>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          <button 
+            className="nav-btn right" 
+            onClick={() => scroll(1)}
+            aria-label="Sonraki ürünler"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Alt Bilgilendirme */}
+        <div className="products-footer">
+          <p className="footer-notice">
+            💫 <strong>Koleksiyonumuz büyüyor!</strong> Yeni özel parfümler yakında eklenecek.
+          </p>
         </div>
       </div>
-
-      <nav className="navbar">
-        <div className="navbar-main">
-          <div className="logo-wrapper">
-            <img 
-              src={`${process.env.PUBLIC_URL}/images/logo.png`} 
-              alt={t('navbar.logoAlt')} 
-              className="navbar-logo" 
-            />
-            <div className="brand-row">
-              <span className="navbar-brand-text">HECATE</span>
-              <span className="tagline">{t('Born in a Bottle')}</span>
-            </div>
-          </div>
-
-          {/* Desktop Menu */}
-          <ul className="desktop-menu">
-            {menuItems.map((item) => (
-              <li 
-                key={item.key} 
-                className={item.submenu ? 'has-submenu' : ''}
-                onMouseEnter={() => item.submenu && setActiveSubmenu(item.key)}
-                onMouseLeave={() => item.submenu && setActiveSubmenu(null)}
-              >
-                <a href={item.path}>{t(`navbar.${item.key}`)}</a>
-                {item.submenu && (
-                  <ul className={`desktop-submenu ${activeSubmenu === item.key ? 'active' : ''}`}>
-                    {item.submenu.map((subItem) => (
-                      <li key={subItem.key}>
-                        <a href={subItem.path}>{t(`navbar.${subItem.key}`)}</a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <div className="desktop-right-section">
-            <div className="language-buttons">
-              <button onClick={() => i18n.changeLanguage('tr')} className={i18n.language === 'tr' ? 'active' : ''}>
-                TR
-              </button>
-              <span className="divider">|</span>
-              <button onClick={() => i18n.changeLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>
-                EN
-              </button>
-            </div>
-            
-            <div className="spacer"></div>
-            
-            <form onSubmit={handleSearch} className="desktop-search-form">
-              <div className="desktop-search-container">
-                <input
-                  type="text"
-                  placeholder={t('search.placeholder')}
-                  className="desktop-search-input"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button type="submit" className="desktop-search-button">
-                  <SearchIcon />
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* Hamburger Menu Button */}
-          <div 
-            className={`burger ${menuOpen ? 'active' : ''}`} 
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={t('navbar.menuToggle')}
-            role="button"
-          >
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-        </div>
-      </nav>
-    </>
+    </section>
   );
 };
 
-const SearchIcon = () => (
-  <svg className="search-icon" viewBox="0 0 24 24" width="18" height="18">
-    <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-  </svg>
-);
-
-export default Navbar;
+export default Products;
