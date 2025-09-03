@@ -7,18 +7,15 @@
   background-color: #0a0a0a;
 }
 
-/* YouTube Video Container */
-.youtube-video-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.youtube-video-container iframe {
+/* Video stilleri */
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
 /* Masaüstü banner - Grid layout */
@@ -108,7 +105,7 @@
 .subtitle {
   font-size: 1.2rem;
   font-weight: 300;
-  color: #ffffff;
+  color: #131212;
   letter-spacing: 3px;
   opacity: 0;
   animation: fadeInUp 1s 0.9s forwards;
@@ -183,77 +180,24 @@
   100% { transform: rotate(360deg); }
 }
 
-/* MOBİL UYUMULUK - YENİ EKLENEN KISIM */
+/* Mobil uyumluluk */
 @media (max-width: 768px) {
   .banner-container {
-    height: 60vh; /* Mobilde daha kısa */
-  }
-  
-  .youtube-video-container {
-    height: 50vh; /* Video alanı */
-  }
-  
-  .content-overlay {
-    top: 40%; /* İçeriği daha yukarı taşı */
-    transform: translate(-50%, -40%);
+    height: 100vh;
   }
   
   .main-title {
-    font-size: 2.2rem; /* Daha küçük font */
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
   }
   
   .subtitle {
-    font-size: 0.9rem; /* Daha küçük font */
-    letter-spacing: 2px;
+    font-size: 1rem;
   }
   
-  .loading-overlay {
-    height: 50vh; /* Video yüksekliği ile aynı */
-  }
-}
-
-/* Çok küçük mobil cihazlar için */
-@media (max-width: 480px) {
-  .banner-container {
-    height: 50vh;
-  }
-  
-  .youtube-video-container {
-    height: 40vh;
-  }
-  
-  .main-title {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-  }
-  
-  .subtitle {
+  .discover-button {
+    padding: 0.8rem 2rem;
     font-size: 0.8rem;
-  }
-  
-  .loading-overlay {
-    height: 40vh;
-  }
-}
-
-/* Yatay mod (landscape) için */
-@media (max-width: 768px) and (orientation: landscape) {
-  .banner-container {
-    height: 80vh; /* Yatay modda daha yüksek */
-  }
-  
-  .youtube-video-container {
-    height: 70vh;
-  }
-  
-  .loading-overlay {
-    height: 70vh;
-  }
-  
-  .main-title {
-    font-size: 1.6rem; /* Yatay modda daha küçük */
   }
 }
 
