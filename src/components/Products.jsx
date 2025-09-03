@@ -18,7 +18,7 @@ const Products = () => {
       concentration: "Extrait de Parfum",
       price: 2150,
       originalPrice: 2500,
-      image: process.env.PUBLIC_URL + "/images/products/IMG_0769.jpg", // Yerel dosya yolu
+      image: process.env.PUBLIC_URL + "/images/products/IMG_0770.jpg", // Yerel dosya yolu
       notes: ["Saffron", "Jasmine", "Vanilla"],
       limitedEdition: true,
       discount: 14,
@@ -31,7 +31,7 @@ const Products = () => {
       gender: "Woman",
       concentration: "Eau de Parfum",
       price: 980,
-      image: process.env.PUBLIC_URL + "/images/products/IMG_0770.jpg", // Yerel dosya yolu
+      image: process.env.PUBLIC_URL + "/images/products/IMG_0769.jpg", // Yerel dosya yolu
       notes: ["Bergamot", "Vetiver", "Amber"],
       limitedEdition: false,
       isNew: true,
