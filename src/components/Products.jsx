@@ -13,7 +13,7 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: "Imperial Majesty",
+      title: "Torchlight",
       gender: "Unisex",
       concentration: "Extrait de Parfum",
       price: 2150,
@@ -27,7 +27,7 @@ const Products = () => {
     },
     {
       id: 2,
-      title: "X Woman",
+      title: "Violet Sorcery",
       gender: "Woman",
       concentration: "Eau de Parfum",
       price: 980,
@@ -39,7 +39,7 @@ const Products = () => {
     },
     {
       id: 3,
-      title: "Royal Oud",
+      title: "Crossroads",
       gender: "Man",
       concentration: "Eau de Parfum",
       price: 1250,
