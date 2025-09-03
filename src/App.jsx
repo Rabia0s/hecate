@@ -81,10 +81,7 @@ const App = () => {
               title="Parfüm Sanatı"
             />
             <BrandValues />
-            <Products 
-              products={signatureCollections} 
-              onAddToCart={addToCart}
-            />
+            {/* PRODUCTS BİLEŞENİ BURADAN KALDIRILDI */}
             <Testimonials />
             <InstagramGallery username="hecateperfume" />
           </>
