@@ -7,7 +7,24 @@
   background-color: #0a0a0a;
 }
 
-/* Video stilleri */
+/* YENİ: YouTube video container */
+.youtube-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Video en altta */
+  overflow: hidden;
+}
+
+.youtube-video-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video stilleri - ESKİ KODU SİLİN 
 .banner-video {
   position: absolute;
   top: 0;
@@ -17,52 +34,22 @@
   object-fit: cover;
   z-index: 1;
 }
+*/
 
 /* Masaüstü banner - Grid layout */
 .desktop-banner-grid {
+  position: absolute; /* EKLENDİ */
+  top: 0; /* EKLENDİ */
+  left: 0; /* EKLENDİ */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   height: 100%;
   gap: 1px;
   background-color: #1a1a1a;
-}
-
-.banner-grid-item {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.banner-grid-item:hover {
-  transform: scale(1.02);
-  z-index: 2;
-}
-
-.grid-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.banner-grid-item:hover .grid-image {
-  transform: scale(1.05);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
-  opacity: 0.6;
-  transition: opacity 0.4s ease;
-}
-
-.banner-grid-item:hover .image-overlay {
-  opacity: 0.3;
+  z-index: 2; /* Resim grid video'nun ÜSTÜNDE */
+  opacity: 0.3; /* EKLENDİ: Resimleri şeffaf yapar */
+  pointer-events: none; /* EKLENDİ: Tıklamaları videoya geçirir */
 }
 
 /* İçerik stilleri */
@@ -75,13 +62,24 @@
   text-align: center;
   width: 90%;
   max-width: 800px;
-  z-index: 3;
+  z-index: 4; /* İçerik en üstte */
 }
 
-.title-wrapper {
-  margin-bottom: 2.5rem;
+/* Yükleme animasyonu */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5; /* Loading en üstte */
 }
 
+/* Kalan CSS aynı kalabilir... */
 .main-title {
   font-size: 4.5rem;
   font-weight: 300;
@@ -105,57 +103,10 @@
 .subtitle {
   font-size: 1.2rem;
   font-weight: 300;
-  color: #131212;
+  color: #ffffff; /* RENK DÜZELTİLDİ: Siyah yerine beyaz */
   letter-spacing: 3px;
   opacity: 0;
   animation: fadeInUp 1s 0.9s forwards;
-}
-
-.discover-button {
-  background: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem 2.5rem;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin: 0 auto;
-  opacity: 0;
-  animation: fadeIn 1s 1.2s forwards;
-}
-
-.discover-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-}
-
-/* Yükleme animasyonu */
-.loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-top: 2px solid #ffffff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
 }
 
 /* Animasyonlar */
@@ -182,10 +133,6 @@
 
 /* Mobil uyumluluk */
 @media (max-width: 768px) {
-  .banner-container {
-    height: 100vh;
-  }
-  
   .main-title {
     font-size: 2.8rem;
     letter-spacing: 4px;
@@ -195,19 +142,7 @@
     font-size: 1rem;
   }
   
-  .discover-button {
-    padding: 0.8rem 2rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* Koyu tema optimizasyonu */
-@media (prefers-color-scheme: dark) {
-  .banner-container {
-    background-color: #0a0a0a;
-  }
-  
   .desktop-banner-grid {
-    background-color: #1a1a1a;
+    opacity: 0.1; /* Mobilde daha şeffaf */
   }
 }
