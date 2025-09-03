@@ -49,45 +49,46 @@ const App = () => {
   };
 
   const signatureCollections = [
-  {
-    id: 1,
-    title: "Torchlight",
-    gender: "Unisex",
-    concentration: "Extrait de Parfum",
-    price: 2150,
-    originalPrice: 2500,
-    image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg",
-    notes: ["Saffron", "Jasmine", "Vanilla"],
-    limitedEdition: true,
-    discount: 14,
-    isNew: false,
-    rating: 4.8
-  },
-  {
-    id: 2,
-    title: "Violet Sorcery",
-    gender: "Woman",
-    concentration: "Eau de Parfum",
-    price: 980,
-    image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg",
-    notes: ["Bergamot", "Vetiver", "Amber"],
-    limitedEdition: false,
-    isNew: true,
-    rating: 4.5
-  },
-  {
-    id: 3,
-    title: "Crossroads",
-    gender: "Man",
-    concentration: "Eau de Parfum",
-    price: 1250,
-    image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg",
-    notes: ["Oud", "Sandalwood", "Bergamot"],
-    limitedEdition: false,
-    isNew: false,
-    rating: 4.7
-  }
-];
+    {
+      id: 1,
+      title: "Torchlight",
+      gender: "Unisex",
+      concentration: "Extrait de Parfum",
+      price: 2150,
+      originalPrice: 2500,
+      image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg",
+      notes: ["Saffron", "Jasmine", "Vanilla"],
+      limitedEdition: true,
+      discount: 14,
+      isNew: false,
+      rating: 4.8
+    },
+    {
+      id: 2,
+      title: "Violet Sorcery",
+      gender: "Woman",
+      concentration: "Eau de Parfum",
+      price: 980,
+      image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg",
+      notes: ["Bergamot", "Vetiver", "Amber"],
+      limitedEdition: false,
+      isNew: true,
+      rating: 4.5
+    },
+    {
+      id: 3,
+      title: "Crossroads",
+      gender: "Man",
+      concentration: "Eau de Parfum",
+      price: 1250,
+      image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg",
+      notes: ["Oud", "Sandalwood", "Bergamot"],
+      limitedEdition: false,
+      isNew: false,
+      rating: 4.7
+    }
+  ];
+
   // Mevcut görünüme göre içerik render et
   const renderContent = () => {
     switch(currentView) {
@@ -106,7 +107,10 @@ const App = () => {
               title="Parfüm Sanatı"
             />
             <BrandValues />
-            {/* PRODUCTS BİLEŞENİ BURADAN KALDIRILDI */}
+            <Products  // ✅ BU SATIRI EKLİYORUM
+              products={signatureCollections} 
+              onAddToCart={addToCart}
+            />
             <Testimonials />
             <InstagramGallery username="hecateperfume" />
           </>
