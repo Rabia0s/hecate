@@ -25,18 +25,7 @@ const InstagramGallery = () => {
       image: `${process.env.PUBLIC_URL}/images/insphoto3.jpeg`,
       caption: "Boutique Deneyimi",
       delay: 0.3
-    },
-     { 
-      id: 1, 
-      image: `${process.env.PUBLIC_URL}/images/insphoto1.jpeg`,
-      caption: "Lüks Parfüm Koleksiyonu",
-      delay: 0.1
-    }, { 
-      id: 1, 
-      image: `${process.env.PUBLIC_URL}/images/insphoto1.jpeg`,
-      caption: "Lüks Parfüm Koleksiyonu",
-      delay: 0.1
-    },
+    }
   ];
 
   const containerVariants = {
