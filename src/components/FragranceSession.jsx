@@ -224,8 +224,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                     <span>Konum: Ataşehir, Çiğli</span>
                   </div>
                   <div className="detail-item">
-                    <span className="icon">👥</span>
-                    <span>Günlük maksimum 3 kişi</span>
+                    
                   </div>
                 </div>
               </div>
