@@ -43,5 +43,24 @@
     "global_desc": "Worldwide Sourcing",
     "global_details": "We create a universal scent library inspired from all over the world.",
     "footer": "Crafting exceptional fragrances with passion and purpose since 2023"
+  },
+
+
+  "brandValues": {
+    "title": "Our Core Values",
+    "subtitle": "What makes Hecate truly special",
+    "handmade": "Vegan Friendly",
+    "handmade_desc": "Plant-Based Essences",
+    "handmade_details": "We formulate our products without animal testing, using completely plant-based ingredients.",
+    "conscious": "Unisex Design",
+    "conscious_desc": "Beyond Genders",
+    "conscious_details": "Our genderless scents are designed to be suitable for everyone, beyond the female/male distinction.",
+    "independent": "Independent",
+    "independent_desc": "Female Empowerment",
+    "independent_details": "As an independent women's initiative, we are proud to be a brand managed with passion and authenticity.",
+    "premium": "Transparency",
+    "premium_desc": "Quality Standards",
+    "premium_details": "We offer a unique scent experience using the rarest and highest quality raw materials.",
+    "footer": "Crafting exceptional fragrances with passion and purpose since 2023"
   }
 }

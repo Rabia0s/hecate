@@ -43,5 +43,23 @@
     "global_desc": "Dünya Çapında Tedarik",
     "global_details": "Dünyanın dört bir yanından ilham alarak evrensel bir koku kütüphanesi oluşturuyoruz.",
     "footer": "2023'ten beri tutku ve amaçla olağanüstü kokular yaratıyoruz"
+  }, 
+  
+  "brandValues": {
+    "title": "Temel Değerlerimiz",
+    "subtitle": "Hecate'yi gerçekten özel kılan şey",
+    "handmade": "Vegan Dostu",
+    "handmade_desc": "Bitki Esaslı Esanslar",
+    "handmade_details": "Ürünlerimizi hayvanlar üzerinde test etmeden, tamamen bitkisel içeriklerle formüle ediyoruz.",
+    "conscious": "Unisex Tasarım",
+    "conscious_desc": "Cinsiyetler Ötesi",
+    "conscious_details": "Cinsiyetsiz kokularımız, kadın/erkek ayrımının ötesinde, herkes için uygun şekilde tasarlanmıştır.",
+    "independent": "Bağımsız",
+    "independent_desc": "Kadın Gücü",
+    "independent_details": "Bağımsız bir kadın girişimi olarak, tutku ve özgünlükle yönetilen bir marka olmaktan gurur duyuyoruz.",
+    "premium": "Şeffaflık",
+    "premium_desc": "Kalite Standartları",
+    "premium_details": "En nadide ve kaliteli hammaddeleri kullanarak eşsiz bir koku deneyimi sunuyoruz.",
+    "footer": "2023'ten beri tutku ve amaçla olağanüstü kokular yaratıyoruz"
   }
 }
