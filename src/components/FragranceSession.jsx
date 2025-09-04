@@ -13,7 +13,6 @@ const FragranceSession = ({ isOpen, onClose }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [appointments, setAppointments] = useState({});
-  const [dateStatus, setDateStatus] = useState({});
 
   // Gerçek zamanlı tarih oluşturma (önümüzdeki 14 gün)
   const generateAvailableDates = () => {
@@ -41,20 +40,6 @@ const FragranceSession = ({ isOpen, onClose }) => {
   const availableDates = generateAvailableDates();
   const availableTimes = ['10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
 
-  // Tarih durumlarını kontrol etme
-  useEffect(() => {
-    const checkDateAvailability = () => {
-      const status = {};
-      availableDates.forEach(date => {
-        const dateAppointments = appointments[date] || [];
-        status[date] = dateAppointments.length >= 3 ? 'dolu' : 'müsait';
-      });
-      setDateStatus(status);
-    };
-
-    checkDateAvailability();
-  }, [appointments, availableDates]);
-
   // LocalStorage'dan randevuları yükle
   useEffect(() => {
     const savedAppointments = localStorage.getItem('hecateAppointments');
@@ -80,8 +65,13 @@ const FragranceSession = ({ isOpen, onClose }) => {
     return !dateAppointments.some(app => app.time === time);
   };
 
+  const isDateFull = (date) => {
+    const dateAppointments = appointments[date] || [];
+    return dateAppointments.length >= 3;
+  };
+
   const handleDateSelect = (date) => {
-    if (dateStatus[date] === 'dolu') {
+    if (isDateFull(date)) {
       alert('Bu tarih için maksimum 3 randevu dolmuştur. Lütfen başka bir tarih seçin.');
       return;
     }
@@ -180,12 +170,6 @@ const FragranceSession = ({ isOpen, onClose }) => {
     }
   };
 
-  const getAvailableSlotsText = (date) => {
-    const dateAppointments = appointments[date] || [];
-    const availableSlots = 3 - dateAppointments.length;
-    return `${availableSlots} / 3 müsait`;
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -237,7 +221,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                   </div>
                   <div className="detail-item">
                     <span className="icon">📍</span>
-                    <span>Konum: Nişantaşı, İstanbul</span>
+                    <span>Konum: Ataşehir, Çiğli</span>
                   </div>
                   <div className="detail-item">
                     <span className="icon">👥</span>
@@ -257,12 +241,10 @@ const FragranceSession = ({ isOpen, onClose }) => {
                         <button
                           key={date}
                           type="button"
-                          className={`date-option ${selectedDate === date ? 'selected' : ''} ${dateStatus[date] === 'dolu' ? 'disabled' : ''}`}
+                          className={`date-option ${selectedDate === date ? 'selected' : ''}`}
                           onClick={() => handleDateSelect(date)}
-                          disabled={dateStatus[date] === 'dolu'}
                         >
                           {date}
-                          <span className="slot-info">{getAvailableSlotsText(date)}</span>
                         </button>
                       ))}
                     </div>
@@ -275,9 +257,9 @@ const FragranceSession = ({ isOpen, onClose }) => {
                         <button
                           key={time}
                           type="button"
-                          className={`time-option ${selectedTime === time ? 'selected' : ''} ${!isTimeSlotAvailable(selectedDate, time) ? 'disabled' : ''}`}
+                          className={`time-option ${selectedTime === time ? 'selected' : ''}`}
                           onClick={() => handleTimeSelect(time)}
-                          disabled={!selectedDate || !isTimeSlotAvailable(selectedDate, time)}
+                          disabled={!selectedDate}
                         >
                           {time}
                         </button>
