@@ -102,26 +102,13 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Ürün Yayınlama Bildirimi */}
-        {showComingSoon && (
-          <div className="coming-soon-notice">
-            <div className="notice-content">
-              <span className="notice-icon">🎯</span>
-              <div className="notice-text">
-                <p>Daha fazla özel parfüm yakında yayınlanacak.</p>
-                <small>Koleksiyonumuz zamanla genişliyor, takipte kalın.</small>
-              </div>
-              <button 
-                className="notice-close"
-                onClick={() => setShowComingSoon(false)}
-                aria-label="Bildirimi kapat"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
-        
+        {/* Alt Bilgilendirme - Üst kısma taşındı */}
+        <div className="products-footer">
+          <p className="footer-notice">
+            💫 <strong>Koleksiyonumuz büyüyor!</strong> Yeni özel parfümler yakında eklenecek.
+          </p>
+        </div>
+
         <div className="products-scroll-wrapper">
           <button 
             className="nav-btn left" 
@@ -171,13 +158,6 @@ const Products = () => {
           >
             →
           </button>
-        </div>
-
-        {/* Alt Bilgilendirme */}
-        <div className="products-footer">
-          <p className="footer-notice">
-            💫 <strong>Koleksiyonumuz büyüyor!</strong> Yeni özel parfümler yakında eklenecek.
-          </p>
         </div>
       </div>
     </section>

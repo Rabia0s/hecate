@@ -1,86 +1,174 @@
+/* AnnouncementBar.css */
+
 .announcement-bar {
-  background-color: #000000;
-  color: white;
-  font-size: 14px;
-  text-align: center;
-  padding: 8px 0;
+  --announcement-bg: #000000;
+  --announcement-text: #ffffff;
+  --announcement-accent: #f0e9db;
+  --announcement-hover: #d8c9a8;
+  --announcement-padding: 8px 0;
+  --announcement-font-size: 14px;
+  --announcement-font-family: inherit;
+  --announcement-z-index: 1000;
+  --scroll-duration: 20s; /* ORJİNAL HIZ */
+  
+  background-color: var(--announcement-bg);
+  color: var(--announcement-text);
+  padding: var(--announcement-padding);
+  font-size: var(--announcement-font-size);
+  font-family: var(--announcement-font-family);
   font-style: italic;
-  z-index: 1000;
   position: relative;
+  z-index: var(--announcement-z-index);
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden; /* Taşan içeriği gizler */
+  justify-content: center;
+  overflow: hidden;
 }
 
-.announcement-bar p {
+.announcement-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrolling-container {
+  display: flex;
+  width: max-content;
+  animation: announcementScroll var(--scroll-duration) linear infinite;
+}
+
+.scrolling-text {
   margin: 0;
-  padding: 0 30px; /* Çarpı butonu için sağda boşluk */
-  white-space: nowrap; /* Metni tek satırda tutar */
-  animation: scrollTextReverse 35s linear infinite; /* Soldan sağa kaydırma animasyonu */
+  padding: 0 20px;
+  white-space: nowrap;
   display: inline-block;
-  padding-right: 100%; /* Metni soldan başlatır */
+  font-size: inherit;
+  font-family: inherit;
 }
 
-/* Soldan sağa kayan yazı animasyonu - 35 SANİYE */
-@keyframes scrollTextReverse {
-  0% {
-    transform: translateX(-100%); /* Sol taraftan başlar */
-  }
-  100% {
-    transform: translateX(100%); /* Sağ tarafa gider */
-  }
+.scrolling-text strong {
+  font-weight: 600;
+  margin: 0 4px;
+  color: var(--announcement-accent);
 }
 
-.announcement-bar a {
-  color: #fff;
-  font-weight: bold;
+.announcement-link {
+  color: var(--announcement-text);
+  font-weight: 600;
   margin-left: 8px;
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
-.announcement-bar a:hover {
-  color: #f0e9db;
+.announcement-link:hover {
+  color: var(--announcement-hover);
 }
 
 .announcement-close {
   position: absolute;
-  right: 15px;
+  right: 20px;
   background: none;
   border: none;
-  color: white;
+  color: var(--announcement-text);
   font-size: 20px;
+  font-weight: 300;
   cursor: pointer;
-  padding: 0 8px;
+  padding: 4px 8px;
   line-height: 1;
-  z-index: 1001; /* Butonun her zaman üstte görünmesini sağlar */
+  transition: color 0.2s ease;
+  z-index: 1001;
 }
 
 .announcement-close:hover {
-  color: #f0e9db;
+  color: var(--announcement-hover);
 }
 
-.announcement-bar {
-  transition: all 0.3s ease;
+/* Kesintisiz kaydırma animasyonu - TEK YAZI */
+@keyframes announcementScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-/* Kapatılınca */
-.announcement-bar.hide {
-  opacity: 0;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
+/* Responsive */
+@media (max-width: 1024px) {
+  .announcement-bar {
+    --announcement-padding: 8px 40px 8px 20px;
+    --scroll-duration: 20s;
+  }
 }
 
 @media (max-width: 768px) {
   .announcement-bar {
-    font-size: 12px;
-    padding: 8px 30px 8px 15px;
-    text-align: left;
+    --announcement-font-size: 13px;
+    --announcement-padding: 8px 35px 8px 15px;
+    --scroll-duration: 20s;
   }
   
-  .announcement-bar p {
-    padding-right: 20px;
-    animation: scrollTextReverse 35s linear infinite; /* Mobil için de 35 saniye */
+  .scrolling-text {
+    padding: 0 15px;
   }
+  
+  .announcement-close {
+    right: 12px;
+    font-size: 18px;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcement-bar {
+    --announcement-font-size: 12px;
+    --announcement-padding: 6px 30px 6px 12px;
+    --scroll-duration: 20s;
+  }
+  
+  .scrolling-text {
+    padding: 0 10px;
+  }
+  
+  .scrolling-text strong {
+    margin: 0 2px;
+  }
+  
+  .announcement-link {
+    margin-left: 4px;
+  }
+  
+  .announcement-close {
+    right: 10px;
+    font-size: 16px;
+    padding: 1px 4px;
+  }
+}
+
+/* Reduced motion için destek */
+@media (prefers-reduced-motion: reduce) {
+  .scrolling-container {
+    animation: none;
+    transform: none;
+    width: 100%;
+  }
+  
+  .scrolling-text {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* Kapatma animasyonu */
+.announcement-bar {
+  transition: all 0.3s ease;
+}
+
+.announcement-bar.hiding {
+  opacity: 0;
+  transform: translateY(-100%);
+  height: 0;
+  padding: 0;
 }

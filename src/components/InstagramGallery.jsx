@@ -89,10 +89,14 @@ const InstagramGallery = () => {
                 src={post.image} 
                 alt={`Instagram: ${post.caption}`}
                 className="gallery-image"
-                loading="lazy"
+                loading="eager" /* Daha hızlı yükleme */
                 onError={(e) => {
                   e.target.src = `${process.env.PUBLIC_URL}/images/logo.png`;
                   console.error("Fotoğraf yüklenemedi:", post.image);
+                }}
+                onLoad={(e) => {
+                  // Görüntü yüklendiğinde netliği artır
+                  e.target.style.filter = 'brightness(1.1) contrast(1.15)';
                 }}
               />
               <div className="instagram-overlay">

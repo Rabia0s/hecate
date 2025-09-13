@@ -51,7 +51,7 @@ const HecatePopup = () => {
                   <div className="hecate-popup-description">
                     <p>Kendinize özel formüle edilmiş</p>
                     <p>parfümünüzü keşfedin.</p>
-                    <p>size uygun özel kokunuzu</p>
+                    <p>Size uygun özel kokunuzu</p>
                     <p>yaratıyoruz.</p>
                   </div>
                   
@@ -59,7 +59,7 @@ const HecatePopup = () => {
                   
                   {/* Butona onClick handler ekliyoruz */}
                   <button className="hecate-popup-cta-button" onClick={openSession}>
-                    ÜCRETSİZ KOKU SEANSI
+                    RANDEVU AL
                   </button>
                   
                   <button 

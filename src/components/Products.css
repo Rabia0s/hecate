@@ -58,6 +58,26 @@
   border-color: #1a1a1a;
 }
 
+/* Alt Bilgilendirme - Yukarı çekildi */
+.products-footer {
+  text-align: center;
+  margin: 1rem 0 2rem 0; /* Yukarıdan margin azaltıldı */
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.footer-notice {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.footer-notice strong {
+  color: #495057;
+  font-weight: 600;
+}
+
 .products-scroll-wrapper {
   position: relative;
   display: flex;
@@ -140,6 +160,11 @@
   .products-scroll > * {
     width: 260px;
   }
+  
+  .products-footer {
+    margin: 1rem -1rem 2rem; /* Mobilde de margin ayarı */
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -162,7 +187,6 @@
 }
 
 /* Products.css - Ürün Yayınlama Stilleri Eklendi */
-/* ... mevcut stiller ... */
 
 /* Ürün Yayınlama Bildirimi */
 .coming-soon-notice {
@@ -269,26 +293,6 @@
   opacity: 0.8;
 }
 
-/* Alt Bilgilendirme */
-.products-footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-}
-
-.footer-notice {
-  margin: 0;
-  color: #6c757d;
-  font-size: 0.95rem;
-}
-
-.footer-notice strong {
-  color: #495057;
-  font-weight: 600;
-}
-
 /* Responsive Tasarım */
 @media (max-width: 768px) {
   .coming-soon-notice {
@@ -311,11 +315,6 @@
   .coming-soon-card {
     width: 260px;
     min-height: 360px;
-  }
-  
-  .products-footer {
-    margin: 2rem -1rem 0;
-    border-radius: 0;
   }
 }
 

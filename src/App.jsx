@@ -80,11 +80,11 @@ const App = () => {
               videoSrc="/videos/luxury-hero.mp4"
               title="Parfüm Sanatı"
             />
-            <BrandValues />
             <Products 
               products={signatureCollections} 
               onAddToCart={addToCart}
             />
+            <BrandValues />
             <Testimonials />
             <InstagramGallery username="hecateperfume" />
           </>
