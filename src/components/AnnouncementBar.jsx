@@ -1,9 +1,11 @@
 // AnnouncementBar.jsx
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './AnnouncementBar.css';
 
 function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(true);
+  const { t } = useTranslation();
   const HIDE_DURATION = 1 * 60 * 60 * 1000; // 1 saat
 
   useEffect(() => {
@@ -28,16 +30,19 @@ function AnnouncementBar() {
       <div className="announcement-content">
         <div className="scrolling-container">
           <p className="scrolling-text">
-            🌙 Senin hikâyeni notalara dönüştürelim.  
-            <strong>Kişiye özel koku ritüeli</strong> HECATE'de başlıyor! 
-            <a href="#rituel" className="announcement-link">Keşfet</a>
+            {t('announcement.text')}  
+            <strong>{t('announcement.highlight')}</strong> 
+            {t('announcement.description')}
+            <a href="#rituel" className="announcement-link">
+              {t('announcement.link')}
+            </a>
           </p>
         </div>
       </div>
       <button 
         className="announcement-close" 
         onClick={handleClose}
-        aria-label="Duyuruyu kapat"
+        aria-label={t('announcement.closeAriaLabel')}
       >
         &times;
       </button>

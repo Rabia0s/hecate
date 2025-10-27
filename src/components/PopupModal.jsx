@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import FragranceSession from './FragranceSession'; // Yeni bileşeni import ediyoruz
+import FragranceSession from './FragranceSession';
+import { useTranslation } from 'react-i18next';
 import './PopupModal.css';
 
 const HecatePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [showSession, setShowSession] = useState(false); // Yeni state
+  const [showSession, setShowSession] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 3000);
@@ -13,8 +15,8 @@ const HecatePopup = () => {
   }, []);
 
   const closeModal = () => setIsVisible(false);
-  const openSession = () => setShowSession(true); // Yeni fonksiyon
-  const closeSession = () => setShowSession(false); // Yeni fonksiyon
+  const openSession = () => setShowSession(true);
+  const closeSession = () => setShowSession(false);
 
   return (
     <>
@@ -39,34 +41,37 @@ const HecatePopup = () => {
                 onClick={closeModal}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label={t('popup.closeButton', 'Popup\'u kapat')}
               >
                 &times;
               </motion.button>
 
               <div className="hecate-popup-content">
                 <div className="hecate-popup-text-content">
-                  <h2 className="hecate-popup-title">HECATE PERFUME</h2>
-                  <p className="hecate-popup-subtitle">K İ Ş İ Y E Ö Z E L P A R F Ü M </p>
+                  <h2 className="hecate-popup-title">{t('popup.brand', 'HECATE PERFUME')}</h2>
+                  <p className="hecate-popup-subtitle">{t('popup.subtitle', 'K İ Ş İ Y E Ö Z E L P A R F Ü M')}</p>
                   
                   <div className="hecate-popup-description">
-                    <p>Kendinize özel formüle edilmiş</p>
-                    <p>parfümünüzü keşfedin.</p>
-                    <p>Size uygun özel kokunuzu</p>
-                    <p>yaratıyoruz.</p>
+                    <p>{t('popup.descriptionLine1', 'Size özel formüle edilmiş')}</p>
+                    <p>{t('popup.descriptionLine2', 'parfümünüzü keşfedin.')}</p>
                   </div>
                   
                   <div className="hecate-popup-divider"></div>
                   
-                  {/* Butona onClick handler ekliyoruz */}
-                  <button className="hecate-popup-cta-button" onClick={openSession}>
-                    RANDEVU AL
+                  <button 
+                    className="hecate-popup-cta-button" 
+                    onClick={openSession}
+                    aria-label={t('popup.ctaButton', 'Randevu almak için tıklayın')}
+                  >
+                    {t('popup.ctaButtonText', 'RANDEVU AL')}
                   </button>
                   
                   <button 
                     className="hecate-popup-secondary-button"
                     onClick={closeModal}
+                    aria-label={t('popup.secondaryButton', 'Daha sonra hatırlat')}
                   >
-                    DAHA SONRA HATIRLAT
+                    {t('popup.secondaryButtonText', 'DAHA SONRA HATIRLAT')}
                   </button>
                 </div>
               </div>

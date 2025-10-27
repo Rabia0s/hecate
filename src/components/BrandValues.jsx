@@ -1,41 +1,43 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiRefreshCw, FiFeather, FiAward, FiHeart } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 import './BrandValues.css';
 
 const BrandValues = () => {
   const ref = useRef();
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const [hoveredItem, setHoveredItem] = useState(null);
+  const { t } = useTranslation();
 
   const values = [
     {
       id: 1,
       icon: <FiRefreshCw />,
-      title: 'Veganlara Uygun',
-      description: 'Bitki Esansları',
-      details: 'Ürünlerimizi hayvanlar üzerinde test etmeden formüle ediyoruz.'
+      title: t('values.vegan'),
+      description: t('values.vegan_desc'),
+      details: t('values.vegan_details', 'Formüllerimiz doğadan ilham alır ve hiçbir hayvansal içerik içermez.')
     },
     {
       id: 2,
       icon: <FiFeather />,
-      title: 'Unisex Tasarım',
-      description: 'Cinsiyetlerin ötesinde',
-      details: 'Cinsiyetsiz kokularımız, erkek/kadın ayrımının ötesinde, herkes için uygundur.'
+      title: t('values.unisex'),
+      description: t('values.unisex_desc'),
+      details: t('values.unisex_details', 'Cinsiyetsiz kokularımız, erkek/kadın ayrımının ötesinde, herkes için uygundur.')
     },
     {
       id: 3,
       icon: <FiAward />,
-      title: 'Bağımsız',
-      description: 'Kadın Gücü',
-      details: 'Bağımsız bir kadın girişimi olarak, tutku ve özgünlükle yönetilen bir marka olmaktan gurur duyuyoruz.'
+      title: t('values.independent'),
+      description: t('values.independent_desc'),
+      details: t('values.independent_details', 'Bağımsız bir kadın girişimi olarak, tutku ve özgünlükle yönetilen bir marka olmaktan gurur duyuyoruz.')
     },
     {
       id: 4,
       icon: <FiHeart />,
-      title: 'Şeffaflık',
-      description: 'Kalite standartları',
-      details: 'En nadide ve kaliteli hammaddeleri kullanarak eşsiz bir koku deneyimi sunuyoruz.'
+      title: t('values.transparency'),
+      description: t('values.transparency_desc'),
+      details: t('values.transparency_details', 'En nadide ve kaliteli hammaddeleri kullanarak eşsiz bir koku deneyimi sunuyoruz.')
     }
   ];
 
@@ -82,8 +84,8 @@ const BrandValues = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2>Değerlerimiz</h2>
-          <p>Hecate'yi gerçekten özel kılan ne</p>
+          <h2>{t('values.title')}</h2>
+          <p>{t('values.subtitle')}</p>
           <div className="header-divider"></div>
         </motion.div>
 
@@ -124,7 +126,7 @@ const BrandValues = () => {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <p>Crafting exceptional fragrances with passion and purpose since 2023</p>
+          <p>{t('common.crafting')}</p>
         </motion.div>
       </div>
     </section>

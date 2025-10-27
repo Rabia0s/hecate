@@ -1,30 +1,32 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Testimonials.css';
 
 const Testimonials = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const constraintsRef = useRef(null);
+  const { t } = useTranslation();
 
   const testimonials = [
     {
       id: 1,
-      comment: "Hecate parfümleri gerçekten başka hiçbir yerde bulamayacağınız bir kaliteye sahip.",
+      comment: t('testimonials.comment1'),
       rating: 5
     },
     {
       id: 2,
-      comment: "Kalıcılığı inanılmaz! Sabah sıktım, akşam hala aynı tazelikte.",
+      comment: t('testimonials.comment2'),
       rating: 5
     },
     {
       id: 3,
-      comment: "Paketleme inanılmaz özenli.",
+      comment: t('testimonials.comment3'),
       rating: 5
     },
     {
       id: 4,
-      comment: "Doğal içerikler ve sürdürülebilir üretim benim için çok önemli. Hecate tam da aradığım marka! Çevre dostu olması ayrıca artı puan.",
+      comment: t('testimonials.comment4'),
       rating: 5
     }
   ];
@@ -109,8 +111,8 @@ const Testimonials = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2>Müşteri Yorumları</h2>
-          <p>Hecate deneyimlerini paylaşan müşterilerimiz</p>
+          <h2>{t('testimonials.title')}</h2>
+          <p>{t('testimonials.subtitle')}</p>
           <div className="header-divider"></div>
         </motion.div>
 
@@ -247,7 +249,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ delay: 1.2 }}
           >
-            Sen de deneyimini paylaş
+            {t('testimonials.shareExperience')}
           </motion.p>
           <motion.a
             href="https://www.instagram.com/hecateperfume/"
@@ -261,7 +263,7 @@ const Testimonials = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            <span>@hecateperfume</span>
+            <span>{t('testimonials.hashtag')}</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

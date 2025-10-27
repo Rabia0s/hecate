@@ -119,7 +119,7 @@ const CartButton = () => {
     
     const orderNumber = `SIP-${Date.now()}-${Math.random().toString(36).substr(2, 5).toUpperCase()}`;
     
-    return `Merhaba, aşağıdaki ürünleri sipariş vermek istiyorum:\n\n${itemsText}\n\nToplam Tutar: ${formatPrice(totalPrice)}\n\nSipariş Numarası: ${orderNumber}\n\nTESLİMAT BİLGİLERİ:\nAd Soyad: ${deliveryInfo.fullName}\nAdres: ${deliveryInfo.address}\nŞehir: ${deliveryInfo.city}\nTelefon: ${deliveryInfo.phone}\nNot: ${deliveryInfo.notes || 'Yok'}\n\nÖdeme yöntemi: Kapıda ödeme\nTeslimat notu: Lütfen paketi dikkatli taşıyınız.`;
+    return `Merhaba, aşağıdaki ürünleri sipariş vermek istiyorum:\n\n${itemsText}\n\nToplam Tutar: ${formatPrice(totalPrice)}\n\nSipariş Numarası: ${orderNumber}\n\nTESLİMAT BİLGİLERİ:\nAd Soyad: ${deliveryInfo.fullName}\nAdres: ${deliveryInfo.address}\nŞehir: ${deliveryInfo.city}\nTelefon: ${deliveryInfo.phone}\nNot: ${deliveryInfo.notes || 'Yok'}\n\nÖdeme yöntemi: IBAN \nTeslimat notu: .`;
   };
 
   // WhatsApp'a yönlendirme

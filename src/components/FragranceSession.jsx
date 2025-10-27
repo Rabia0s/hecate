@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FragranceSession.css';
 
-const FragranceSession = ({ isOpen, onClose }) => {
+const FragranceSession = ({ isOpen, onClose, translations }) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [formData, setFormData] = useState({
@@ -13,6 +13,8 @@ const FragranceSession = ({ isOpen, onClose }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [appointments, setAppointments] = useState({});
+
+  const t = translations?.fragranceSession || {};
 
   // Gerçek zamanlı tarih oluşturma (önümüzdeki 14 gün)
   const generateAvailableDates = () => {
@@ -72,7 +74,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
 
   const handleDateSelect = (date) => {
     if (isDateFull(date)) {
-      alert('Bu tarih için maksimum 3 randevu dolmuştur. Lütfen başka bir tarih seçin.');
+      alert(t.alerts?.dateFull || 'Bu tarih için maksimum 3 randevu dolmuştur. Lütfen başka bir tarih seçin.');
       return;
     }
     setSelectedDate(date);
@@ -81,12 +83,12 @@ const FragranceSession = ({ isOpen, onClose }) => {
 
   const handleTimeSelect = (time) => {
     if (!selectedDate) {
-      alert('Lütfen önce bir tarih seçin.');
+      alert(t.alerts?.dateRequired || 'Lütfen önce bir tarih seçin.');
       return;
     }
 
     if (!isTimeSlotAvailable(selectedDate, time)) {
-      alert('Bu saat için randevu dolmuştur. Lütfen başka bir saat seçin.');
+      alert(t.alerts?.timeSlotFull || 'Bu saat için randevu dolmuştur. Lütfen başka bir saat seçin.');
       return;
     }
 
@@ -97,12 +99,12 @@ const FragranceSession = ({ isOpen, onClose }) => {
     e.preventDefault();
     
     if (!selectedDate || !selectedTime) {
-      alert('Lütfen tarih ve saat seçin.');
+      alert(t.alerts?.timeRequired || 'Lütfen tarih ve saat seçin.');
       return;
     }
 
     if (!isTimeSlotAvailable(selectedDate, selectedTime)) {
-      alert('Bu saat için randevu dolmuştur. Lütfen başka bir saat seçin.');
+      alert(t.alerts?.timeSlotFull || 'Bu saat için randevu dolmuştur. Lütfen başka bir saat seçin.');
       return;
     }
 
@@ -122,7 +124,6 @@ const FragranceSession = ({ isOpen, onClose }) => {
     };
 
     try {
-      // Formspree endpoint'inizi buraya ekleyin
       const response = await fetch('https://formspree.io/f/mdkldzrb', {
         method: 'POST',
         headers: {
@@ -147,7 +148,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
           [selectedDate]: [...(prev[selectedDate] || []), newAppointment]
         }));
 
-        alert('Randevunuz başarıyla oluşturuldu! Size en kısa sürede dönüş yapacağız.');
+        alert(t.alerts?.success || 'Randevunuz başarıyla oluşturuldu! Size en kısa sürede dönüş yapacağız.');
         
         // Formu sıfırla
         setFormData({
@@ -164,7 +165,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error('Hata:', error);
-      alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+      alert(t.alerts?.error || 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
     } finally {
       setIsSubmitting(false);
     }
@@ -193,48 +194,48 @@ const FragranceSession = ({ isOpen, onClose }) => {
             </button>
 
             <div className="session-header">
-              <h2>ÖZEL KOKU SEANSI</h2>
-              <p>Size özel parfümünüzü birlikte yaratmak için ofisimize bekliyoruz</p>
+              <h2>{t.title || "ÖZEL KOKU SEANSI"}</h2>
+              <p>{t.description?.line1 || "Koku notalarından oluşan bir masa;"}</p>
+              <p>{t.description?.line2 || "Esanslar, bazlar ve akorlarla"}</p>
+              <p>{t.description?.line3 || "kendi imza kokunuzu yaratmanız için tasarlanmış"}</p>
+              <p>{t.description?.line4 || "özel bir koku yolculuğu"}</p>
             </div>
 
             <div className="session-content">
               <div className="session-info">
-                <h3>Koku Seansı Deneyimi</h3>
+                <h3>{t.experience?.title || "Koku Seansı Deneyimi"}</h3>
                 <p>
-                  Hecate Perfume olarak, size özel parfümünüzü birlikte yaratmak için ofisimizde 
-                  özel koku seansları düzenliyoruz. Uzman parfümörlerimiz eşliğinde gerçekleşen 
-                  bu seansta:
+                  {t.experience?.intro || "Kişiye özel parfüm yaratımını hedefleyen bu deneyim, keşif ve deneyselliği bir araya getirerek bu süreci kişinin en derin dilini çözmeyi ve onu bir kokuya dönüştürmeyi amaçlar"}
                 </p>
                 
-                <ul>
-                  <li>Koku tercihlerinizi birlikte analiz ediyoruz</li>
-                  <li>Size en uygun notaları belirliyoruz</li>
-                  <li>Kişiye özel karışımımızı oluşturuyoruz</li>
-                  <li>Parfümünüzü birlikte test ediyoruz</li>
-                  <li>Son dokunuşları yaparak şişenizi hazırlıyoruz</li>
-                </ul>
+                <p><strong>{t.experience?.essenceDiscovery || "Esansların Keşfi:"}</strong></p>
                 
-                <div className="session-details">
-                  <div className="detail-item">
-                    <span className="icon">⏱</span>
-                    <span>Seans süresi: 60-90 dakika</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="icon">📍</span>
-                    <span>Konum: Ataşehir, Çiğli</span>
-                  </div>
-                  <div className="detail-item">
-                    
-                  </div>
-                </div>
+                <ul>
+                  <li>{t.experience?.points?.analysis || "Kişinin koku hafızasını anlamaya yönelik kısa bir analiz formuyla başlar"}</li>
+                  <li>{t.experience?.points?.formBasis || "Bu form, parfüm tasarım sürecinin temelini oluşturur"}</li>
+                  <li>{t.experience?.points?.profile || "Ardından, esansların içgüdüsel keşfine geçilerek kişisel koku profili belirlenir"}</li>
+                  <li>{t.experience?.points?.reference || "Kendinize ait referans notalarını seçerek kişisel koku profilinizi oluşturursunuz"}</li>
+                </ul>
+
+                <p><strong>{t.experience?.formula || "Formülün geliştirilmesi:"}</strong></p>
+                
+                 <ul>
+                  <li>{t.experience?.formulaPoints?.guidance || "Parfüm tasarımcısının rehberliğinde, seçtiğiniz notalar arasından baz, kalp ve üst katmanlarıyla özgün bir formül oluşturulur"}</li>
+                  </ul>
+
+                  <p><strong>{t.experience?.bottling || "Şişeleme:"}</strong></p>
+
+                  <ul>
+                  <li>{t.experience?.bottlingPoints?.personalization || "Kişisel parfümünüz, özel şişemize doldurulur ve sizin seçtiğiniz isimle kişiselleştirilir."}</li>
+                  </ul>
               </div>
 
               <form className="session-form" onSubmit={handleSubmit}>
-                <h3>Randevu Oluştur</h3>
+                <h3>{t.form?.title || "Randevunuzu Oluşturun"}</h3>
                 
                 <div className="form-row">
                   <div className="input-group">
-                    <label>Tarih Seçiniz</label>
+                    <label>{t.form?.selectDate || "Tarih Seçiniz"}</label>
                     <div className="date-options">
                       {availableDates.map(date => (
                         <button
@@ -250,7 +251,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                   </div>
                   
                   <div className="input-group">
-                    <label>Saat Seçiniz</label>
+                    <label>{t.form?.selectTime || "Saat Seçiniz"}</label>
                     <div className="time-options">
                       {availableTimes.map(time => (
                         <button
@@ -268,7 +269,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                 </div>
                 
                 <div className="input-group">
-                  <label>Adınız Soyadınız</label>
+                  <label>{t.form?.fullName || "Adınız Soyadınız"}</label>
                   <input
                     type="text"
                     name="name"
@@ -280,7 +281,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                 
                 <div className="form-row">
                   <div className="input-group">
-                    <label>E-posta Adresiniz</label>
+                    <label>{t.form?.email || "E-posta Adresiniz"}</label>
                     <input
                       type="email"
                       name="email"
@@ -291,7 +292,7 @@ const FragranceSession = ({ isOpen, onClose }) => {
                   </div>
                   
                   <div className="input-group">
-                    <label>Telefon Numaranız</label>
+                    <label>{t.form?.phone || "Telefon Numaranız"}</label>
                     <input
                       type="tel"
                       name="phone"
@@ -303,13 +304,13 @@ const FragranceSession = ({ isOpen, onClose }) => {
                 </div>
                 
                 <div className="input-group">
-                  <label>Özel notlarınız (isteğe bağlı)</label>
+                  <label>{t.form?.notes || "Özel notlarınız (isteğe bağlı)"}</label>
                   <textarea
                     name="notes"
                     value={formData.notes}
                     onChange={handleInputChange}
                     rows="3"
-                    placeholder="Koku tercihleriniz veya özel istekleriniz..."
+                    placeholder={t.form?.notesPlaceholder || "Koku tercihleriniz veya özel istekleriniz..."}
                   />
                 </div>
                 
@@ -318,14 +319,20 @@ const FragranceSession = ({ isOpen, onClose }) => {
                   className="session-submit-btn"
                   disabled={isSubmitting || !selectedDate || !selectedTime || !formData.name || !formData.email || !formData.phone}
                 >
-                  {isSubmitting ? 'GÖNDERİLİYOR...' : 'RANDEVU OLUŞTUR'}
+                  {isSubmitting 
+                    ? (t.form?.submitting || 'GÖNDERİLİYOR...') 
+                    : (t.form?.submit || 'RANDEVUNUZU OLUŞTURUN')
+                  }
                 </button>
                 
                 <p className="form-note">
-                  Randevu onayı için sizinle iletişime geçilecektir. 
+                  {t.form?.formNote?.part1 || "Randevu onayı için sizinle iletişime geçilecektir."}
+                  {' '}
                   <a href="https://www.instagram.com/hecateperfume/" target="_blank" rel="noopener noreferrer">
-                    Instagram sayfamızı
-                  </a> takip etmeyi unutmayın!
+                    {t.form?.formNote?.instagram || "Instagram sayfamızı"}
+                  </a>
+                  {' '}
+                  {t.form?.formNote?.part2 || "takip etmeyi unutmayın!"}
                 </p>
               </form>
             </div>

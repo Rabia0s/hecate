@@ -5,43 +5,237 @@
     "event": "Atölyeler",
     "about": "Hakkımızda",
     "contact": "İletişim",
-    "menuToggle": "Menüyü aç/kapat",
+    "menuToggle": "Menüyü Aç/Kapat",
     "logoAlt": "Hecate Logosu"
   },
   "search": {
-    "placeholder": "Ara..."
+    "placeholder": "Ara...",
+    "emptyWarning": "Lütfen bir arama terimi girin"
+  },
+  "hero": {
+    "brand": "HECATE PERFUME",
+    "tagline": "KİŞİYE ÖZEL PARFÜM",
+    "title": "Sizin İçin Formüle Edilmiş Kişisel Kokunuzu Keşfedin.",
+    "subtitle": "Size özel olarak hazırlanan imza kokunuzu yaratıyoruz.",
+    "cta_appointment": "RANDEVU AL",
+    "cta_reminder": "DAHA SONRA HATIRLAT",
+    "quote": "🌙 Hikayenizi kokuya dönüştürelim.",
+    "description": "Kişiye özel koku ritüeli HECATE'de başlıyor!",
+    "discover": "Keşfet"
   },
   "products": {
     "title": "Koleksiyonumuz",
-    "classic_collection": "Klasik Koleksiyon",
-    "premium_collection": "Premium Koleksiyon",
-    "limited_edition": "Sınırlı Sayıda Üretim",
-    "gift_set": "Lüks Hediye Seti",
-    "view_details": "Detayları Gör",
+    "filter_all": "Tümü",
+    "filter_men": "Erkek",
+    "filter_women": "Kadın",
+    "collection_growing": "💫 Koleksiyonumuz Büyüyor!",
+    "new_coming_soon": "Yeni, özel parfümler çok yakında.",
+    "limited_edition": "Sınırlı Sayıda",
+    "new": "Yeni",
+    "coming_soon": "Yakında",
+    "new_perfumes_coming": "Yeni Kokular Yakında Geliyor",
+    "special_collection": "Özel Koleksiyon",
     "add_to_cart": "Sepete Ekle",
-    "born_in_bottle": "Bir Şişede Doğan"
+    "previous_products": "Önceki",
+    "next_products": "Sonraki"
   },
-  "brandValues": {
-    "title": "Temel Değerlerimiz",
-    "subtitle": "Hecate'yi gerçekten özel kılan şey",
-    "handmade": "Vegan Dostu",
-    "handmade_desc": "Bitki Esaslı Esanslar",
-    "handmade_details": "Ürünlerimizi hayvanlar üzerinde test etmeden, tamamen bitkisel içeriklerle formüle ediyoruz.",
-    "conscious": "Unisex Tasarım",
-    "conscious_desc": "Cinsiyetler Ötesi",
-    "conscious_details": "Cinsiyetsiz kokularımız, kadın/erkek ayrımının ötesinde, herkes için uygun şekilde tasarlanmıştır.",
-    "independent": "Bağımsız",
-    "independent_desc": "Kadın Gücü",
-    "independent_details": "Bağımsız bir kadın girişimi olarak, tutku ve özgünlükle yönetilen bir marka olmaktan gurur duyuyoruz.",
-    "premium": "Şeffaflık",
-    "premium_desc": "Kalite Standartları",
-    "premium_details": "En nadide ve kaliteli hammaddeleri kullanarak eşsiz bir koku deneyimi sunuyoruz.",
-    "artisan": "Zanaatkar İşi",
-    "artisan_desc": "Usta Parfümörler",
-    "artisan_details": "Usta parfümörlerimiz, her bir şişeye sanat eseri titizliğiyle yaklaşır.",
-    "global": "Küresel İlham",
-    "global_desc": "Dünya Çapında Tedarik",
-    "global_details": "Dünyanın dört bir yanından ilham alarak evrensel bir koku kütüphanesi oluşturuyoruz.",
-    "footer": "2023'ten beri tutku ve amaçla olağanüstü kokular yaratıyoruz"
+  "values": {
+    "title": "Hecate İmzası",
+    "subtitle": "Hecate'yi Gerçekten Özel Yapan Nedir?",
+    "vegan": "Vegan Dostu",
+    "vegan_desc": "Bitki Bazlı Esanslar",
+    "vegan_details": "Formüllerimiz doğadan ilham alır ve tamamen hayvansal içeriklerden arındırılmıştır.",
+    "unisex": "Cinsiyetsiz Kokular",
+    "unisex_desc": "Cinsiyetin Ötesinde",
+    "unisex_details": "Kokularımız, geleneksel kadın/erkek ayrımını aşarak herkes için tasarlanmıştır.",
+    "independent": "Bağımsız Ruh",
+    "independent_desc": "Kadın Güçlendirme",
+    "independent_details": "Bağımsız bir kadın girişimi olarak, tutku ve samimiyetle inşa edilmiş bir marka olmaktan gurur duyuyoruz.",
+    "transparency": "Şeffaflık",
+    "transparency_desc": "Kalite Taahhüdü",
+    "transparency_details": "En nadide ve en yüksek kalitedeki hammaddeleri kullanarak benzersiz bir koku deneyimi sunuyoruz."
+  },
+  "testimonials": {
+    "title": "Müşteri Yorumları",
+    "subtitle": "Müşterilerimiz Hecate deneyimlerini paylaşıyor",
+    "hashtag": "@hecateperfume",
+    "shareExperience": "Deneyiminizi paylaşın",
+    "comment1": "Hecate parfümleri, başka hiçbir yerde bulamayacağınız bir kalite ve derinliğe sahip.",
+    "comment2": "Kalıcılığı inanılmaz! Sabah sıktım ve akşam hala aynı canlılıktaydı.",
+    "comment3": "Paketlemedeki detaylara verilen özen olağanüstü.",
+    "comment4": "Doğal içerikler ve sürdürülebilir üretim benim için çok önemli. Hecate tam aradığım markaydı! Çevre dostu yaklaşımları harika bir artı.",
+    "quote": "Bir damla koku, içinizdeki tanrıçayı uyandırabilir."
+  },
+  "newsletter": {
+    "title": "Yeni Koleksiyonumuzdan Haberdar Olun",
+    "description": "Özel indirimler ve yeni ürün lansmanlarından ilk siz haberdar olun.",
+    "placeholder": "E-posta adresiniz",
+    "button": "Abone Ol"
+  },
+  "instagram": {
+    "hashtag": "#HecatePerfume",
+    "quote": "Bir damla koku, içinizdeki tanrıçayı uyandırabilir.",
+    "followButton": "Bizi Takip Edin",
+    "caption1": "Lüks Parfüm Koleksiyonu",
+    "caption2": "Özel Seri",
+    "caption3": "Butik Deneyim"
+  },
+  "announcement": {
+    "text": "🌙 Hikayenizi kokuya dönüştürelim.",
+    "highlight": "Kişiye Özel Koku Ritüeli",
+    "description": "HECATE'de başlıyor!",
+    "link": "Keşfet",
+    "closeAriaLabel": "Duyuruyu kapat"
+  },
+  "footer": {
+    "brand": "HECATE",
+    "tagline": "✨ Özel Koku Zanaatkarlığı",
+    "description": "Zarafetin benzersiz kaliteyle buluştuğu eşsiz parfüm deneyimi.",
+    "discover": "KEŞFET",
+    "collections": "Koleksiyonlar",
+    "personalized": "Kişiye Özel Kokular",
+    "gift_sets": "Hediye Setleri",
+    "support": "DESTEK",
+    "contact": "Bize Ulaşın",
+    "follow": "BİZİ TAKİP EDİN",
+    "follow_desc": "Yeni ürünler ve özel teklifler",
+    "copyright": "© 2025 HECATE. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları",
+    "cookies": "Çerez Politikası",
+    "subscriptionSuccess": "Teşekkürler! Aboneliğiniz onaylandı.",
+    "emailError": "Lütfen geçerli bir e-posta adresi girin.",
+    "submitError": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "connectionError": "Bağlantı başarısız. Lütfen ağınızı kontrol edin.",
+    "imageAlt1": "Hecate Parfüm Şişesi 1",
+    "imageAlt2": "Hecate Parfüm Şişesi 2",
+    "imageAlt3": "Hecate Parfüm Şişesi 3",
+    "imageAlt4": "Hecate Parfüm Şişesi 4",
+    "contactModal": {
+      "title": "İletişim Bilgileri",
+      "subtitle": "Aşağıdaki kanallardan herhangi biri aracılığıyla bize ulaşın.",
+      "address": "Adres",
+      "addressValue": "Ataşehir, İzmir",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "whatsapp": "WhatsApp'tan Bize Yazın",
+      "call": "Hemen Ara"
+    }
+  },
+  "common": {
+    "crafting": "2023'ten beri tutku ve amaçla olağanüstü kokular yaratıyoruz."
+  },
+  "popup": {
+    "brand": "HECATE PERFUME",
+    "subtitle": "K İ Ş İ Y E Ö Z E L P A R F Ü M",
+    "descriptionLine1": "Sizin için formüle edilmiş kişisel",
+    "descriptionLine2": "parfümünüzü keşfedin, size özel olarak hazırlandı.",
+    "ctaButtonText": "RANDEVU AL",
+    "secondaryButtonText": "DAHA SONRA HATIRLAT",
+    "closeButton": "Popup'ı kapat",
+    "ctaButton": "Kişisel danışmanlığınızı ayırtın",
+    "secondaryButton": "Daha sonra hatırlat"
+  },
+  "cart": {
+    "title": "Sepetim",
+    "deliveryInfo": "Teslimat Bilgileri",
+    "emptyCart": "Sepetiniz boş",
+    "emptyCartMessage": "Harika ürünlerimizi keşfedin!",
+    "total": "Toplam",
+    "fillDeliveryInfo": "Teslimat Bilgilerini Doldur",
+    "proceedToWhatsApp": "WhatsApp ile Sipariş Ver",
+    "redirecting": "Yönlendiriliyor...",
+    "formNotice": "📦 Teslimat bilgileriniz güvende saklanır ve bir sonraki alışverişinizde otomatik doldurulur.",
+    "formNoticeBottom": "💬 WhatsApp'a yönlendirileceksiniz. Siparişinizi tamamlamak için mesajı gönder butonuna basın.",
+    "orderSummary": "Sipariş Özeti",
+    "itemCount": "Ürün Sayısı",
+    "delivery": "Teslimat",
+    "free": "Ücretsiz",
+    "pieces": "adet",
+    "formErrors": {
+      "fullNameRequired": "Ad soyad gereklidir",
+      "fullNameValid": "Geçerli bir ad soyad giriniz",
+      "addressRequired": "Adres gereklidir",
+      "addressDetailed": "Daha detaylı bir adres giriniz",
+      "cityRequired": "Şehir gereklidir",
+      "phoneRequired": "Telefon numarası gereklidir",
+      "phoneValid": "Geçerli bir telefon numarası giriniz (5XX XXX XX XX)"
+    },
+    "labels": {
+      "fullName": "Ad Soyad *",
+      "address": "Adres *",
+      "city": "Şehir *",
+      "phone": "Telefon *",
+      "notes": "Sipariş Notları (Opsiyonel)"
+    },
+    "placeholders": {
+      "fullName": "Adınız ve soyadınız",
+      "address": "Cadde, sokak, apartman, daire no, kat ve varsa kapı kodu",
+      "city": "İl/İlçe",
+      "phone": "5XX XXX XX XX",
+      "notes": "Kapıda ödeme, teslimat saati, özel notlar..."
+    },
+    "ariaLabels": {
+      "cartButton": "Sepetim",
+      "close": "Kapat",
+      "decreaseQuantity": "Miktarı azalt",
+      "increaseQuantity": "Miktarı artır",
+      "removeItem": "Ürünü kaldır"
+    }
+  },
+  "fragranceSession": {
+    "title": "ÖZEL KOKU SEANSI",
+    "description": {
+      "line1": "Koku notalarından oluşan bir masa;",
+      "line2": "Esanslar, bazlar ve akorlarla",
+      "line3": "kendi imza kokunuzu yaratmanız için tasarlanmış",
+      "line4": "özel bir koku yolculuğu"
+    },
+    "experience": {
+      "title": "Koku Seansı Deneyimi",
+      "intro": "Kişiye özel parfüm yaratımını hedefleyen bu deneyim, keşif ve deneyselliği bir araya getirerek bu süreci kişinin en derin dilini çözmeyi ve onu bir kokuya dönüştürmeyi amaçlar",
+      "essenceDiscovery": "Esansların Keşfi:",
+      "points": {
+        "analysis": "Kişinin koku hafızasını anlamaya yönelik kısa bir analiz formuyla başlar",
+        "formBasis": "Bu form, parfüm tasarım sürecinin temelini oluşturur",
+        "profile": "Ardından, esansların içgüdüsel keşfine geçilerek kişisel koku profili belirlenir",
+        "reference": "Kendinize ait referans notalarını seçerek kişisel koku profilinizi oluşturursunuz"
+      },
+      "formula": "Formülün geliştirilmesi:",
+      "formulaPoints": {
+        "guidance": "Parfüm tasarımcısının rehberliğinde, seçtiğiniz notalar arasından baz, kalp ve üst katmanlarıyla özgün bir formül oluşturulur"
+      },
+      "bottling": "Şişeleme:",
+      "bottlingPoints": {
+        "personalization": "Kişisel parfümünüz, özel şişemize doldurulur ve sizin seçtiğiniz isimle kişiselleştirilir."
+      }
+    },
+    "form": {
+      "title": "Randevunuzu Oluşturun",
+      "selectDate": "Tarih Seçiniz",
+      "selectTime": "Saat Seçiniz",
+      "fullName": "Adınız Soyadınız",
+      "email": "E-posta Adresiniz",
+      "phone": "Telefon Numaranız",
+      "notes": "Özel notlarınız (isteğe bağlı)",
+      "notesPlaceholder": "Koku tercihleriniz veya özel istekleriniz...",
+      "submit": "RANDEVUNUZU OLUŞTURUN",
+      "submitting": "GÖNDERİLİYOR...",
+      "formNote": {
+        "part1": "Randevu onayı için sizinle iletişime geçilecektir.",
+        "instagram": "Instagram sayfamızı",
+        "part2": "takip etmeyi unutmayın!"
+      }
+    },
+    "alerts": {
+      "dateRequired": "Lütfen önce bir tarih seçin.",
+      "timeRequired": "Lütfen tarih ve saat seçin.",
+      "dateFull": "Bu tarih için maksimum 3 randevu dolmuştur. Lütfen başka bir tarih seçin.",
+      "timeSlotFull": "Bu saat için randevu dolmuştur. Lütfen başka bir saat seçin.",
+      "success": "Randevunuz başarıyla oluşturuldu! Size en kısa sürede dönüş yapacağız.",
+      "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+    },
+    "weekDays": ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    "closeButton": "Kapat"
   }
 }

@@ -2,40 +2,240 @@
   "navbar": {
     "home": "Home",
     "products": "Products",
-    "event": "Events",
+    "event": "Workshops",
     "about": "About Us",
     "contact": "Contact",
-    "menuToggle": "Toggle menu",
+    "menuToggle": "Toggle navigation",
     "logoAlt": "Hecate Logo"
   },
   "search": {
-    "placeholder": "Search..."
+    "placeholder": "Search...",
+    "emptyWarning": "Please enter a search term"
+  },
+  "hero": {
+    "brand": "HECATE PERFUME",
+    "tagline": "PERSONAL PERFUME",
+    "title": "Discover Your Personally Formulated Fragrance.",
+    "subtitle": "We craft your signature scent, tailored exclusively for you.",
+    "cta_appointment": "BOOK AN APPOINTMENT",
+    "cta_reminder": "REMIND ME LATER",
+    "quote": "🌙 Let's transform your story into scent.",
+    "description": "The personal scent ritual begins at HECATE!",
+    "discover": "Discover"
   },
   "products": {
-    "title": "Collection",
-    "classic_collection": "Classic Collection",
-    "premium_collection": "Premium Collection",
+    "title": "Our Collection",
+    "filter_all": "All",
+    "filter_men": "For Him",
+    "filter_women": "For Her",
+    "collection_growing": "💫 Our Collection is Growing!",
+    "new_coming_soon": "New, special perfumes are coming soon.",
     "limited_edition": "Limited Edition",
-    "gift_set": "Luxury Gift Set",
-    "view_details": "View Details",
+    "new": "New",
+    "coming_soon": "Coming Soon",
+    "new_perfumes_coming": "New Fragrances Arriving Soon",
+    "special_collection": "Special Collection",
     "add_to_cart": "Add to Cart",
-    "born_in_bottle": "Born in a Bottle"
+    "previous_products": "Previous",
+    "next_products": "Next"
   },
-  "brandValues": {
-    "title": "Our Core Values",
-    "subtitle": "What makes Hecate truly special",
-    "handmade": "Vegan Friendly",
-    "handmade_desc": "Plant-Based Essences",
-    "handmade_details": "We formulate our products without animal testing, using completely plant-based ingredients.",
-    "conscious": "Unisex Design",
-    "conscious_desc": "Beyond Genders",
-    "conscious_details": "Our genderless scents are designed to be suitable for everyone, beyond the female/male distinction.",
-    "independent": "Independent",
+  "values": {
+    "title": "The Hecate Signature",
+    "subtitle": "What Makes Hecate Truly Special",
+    "vegan": "Vegan Friendly",
+    "vegan_desc": "Plant-Based Essences",
+    "vegan_details": "Our formulas are inspired by nature and are completely free of animal-derived ingredients.",
+    "unisex": "Genderless Scents",
+    "unisex_desc": "Beyond Gender",
+    "unisex_details": "Our fragrances are designed for everyone, transcending the traditional male/female dichotomy.",
+    "independent": "Independent Spirit",
     "independent_desc": "Female Empowerment",
-    "independent_details": "As an independent women's initiative, we are proud to be a brand managed with passion and authenticity.",
-    "premium": "Transparency",
-    "premium_desc": "Quality Standards",
-    "premium_details": "We offer a unique scent experience using the rarest and highest quality raw materials.",
-    "footer": "Crafting exceptional fragrances with passion and purpose since 2023"
+    "independent_details": "As an independent women-led initiative, we take pride in being a brand built on passion and authenticity.",
+    "transparency": "Transparency",
+    "transparency_desc": "Commitment to Quality",
+    "transparency_details": "We deliver a unique olfactory experience using the rarest and highest quality raw materials."
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Our customers share their Hecate experiences",
+    "hashtag": "@hecateperfume",
+    "shareExperience": "Share your experience",
+    "comment1": "Hecate perfumes have a quality and depth you simply won't find anywhere else.",
+    "comment2": "The longevity is incredible! I applied it in the morning and it was still just as vibrant in the evening.",
+    "comment3": "The attention to detail in the packaging is exceptional.",
+    "comment4": "Natural ingredients and sustainable production are very important to me. Hecate is exactly the brand I was looking for! Their eco-conscious approach is a wonderful bonus.",
+    "quote": "A single drop of scent can awaken the goddess within you."
+  },
+  "newsletter": {
+    "title": "Stay Updated on Our New Collection",
+    "description": "Be the first to know about exclusive discounts and new product launches.",
+    "placeholder": "Your email address",
+    "button": "Subscribe"
+  },
+  "instagram": {
+    "hashtag": "#HecatePerfume",
+    "quote": "A single drop of scent can awaken the goddess within you.",
+    "followButton": "Follow Us",
+    "caption1": "Luxury Perfume Collection",
+    "caption2": "Special Edition Series",
+    "caption3": "Boutique Experience"
+  },
+  "announcement": {
+    "text": "🌙 Let's transform your story into scent.",
+    "highlight": "Personal Scent Ritual",
+    "description": "begins at HECATE!",
+    "link": "Discover",
+    "closeAriaLabel": "Close announcement"
+  },
+  "footer": {
+    "brand": "HECATE",
+    "tagline": "✨ Exclusive Fragrance Craftsmanship",
+    "description": "A unique perfume experience where elegance meets unparalleled quality.",
+    "discover": "DISCOVER",
+    "collections": "Collections",
+    "personalized": "Personal Scents",
+    "gift_sets": "Gift Sets",
+    "support": "SUPPORT",
+    "contact": "Contact Us",
+    "follow": "FOLLOW US",
+    "follow_desc": "New products and special offers",
+    "copyright": "© 2025 HECATE. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookies": "Cookie Policy",
+    "subscriptionSuccess": "Thank you! Your subscription has been confirmed.",
+    "emailError": "Please enter a valid email address.",
+    "submitError": "An error occurred. Please try again.",
+    "connectionError": "Connection failed. Please check your network.",
+    "imageAlt1": "Hecate Perfume Bottle 1",
+    "imageAlt2": "Hecate Perfume Bottle 2",
+    "imageAlt3": "Hecate Perfume Bottle 3",
+    "imageAlt4": "Hecate Perfume Bottle 4",
+    "contactModal": {
+      "title": "Contact Information",
+      "subtitle": "Reach out to us through any of the channels below.",
+      "address": "Address",
+      "addressValue": "Ataşehir, İzmir",
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "Message us on WhatsApp",
+      "call": "Call Now"
+    }
+  },
+  "common": {
+    "crafting": "Crafting exceptional fragrances with passion and purpose since 2023."
+  },
+  "popup": {
+    "brand": "HECATE PERFUME",
+    "subtitle": "P E R S O N A L   P E R F U M E",
+    "descriptionLine1": "Discover your personally formulated",
+    "descriptionLine2": "perfume, tailored exclusively for you.",
+    "ctaButtonText": "BOOK AN APPOINTMENT",
+    "secondaryButtonText": "REMIND ME LATER",
+    "closeButton": "Close popup",
+    "ctaButton": "Book your personal consultation",
+    "secondaryButton": "Remind me later"
+  },
+  "cart": {
+    "title": "My Cart",
+    "deliveryInfo": "Delivery Information",
+    "emptyCart": "Your cart is empty",
+    "emptyCartMessage": "Discover our amazing products!",
+    "total": "Total",
+    "fillDeliveryInfo": "Fill Delivery Information",
+    "proceedToWhatsApp": "Order via WhatsApp",
+    "redirecting": "Redirecting...",
+    "formNotice": "📦 Your delivery information is stored securely and will be auto-filled in your next purchase.",
+    "formNoticeBottom": "💬 You will be redirected to WhatsApp. Press the send button to complete your order.",
+    "orderSummary": "Order Summary",
+    "itemCount": "Item Count",
+    "delivery": "Delivery",
+    "free": "Free",
+    "pieces": "pieces",
+    "formErrors": {
+      "fullNameRequired": "Full name is required",
+      "fullNameValid": "Please enter a valid full name",
+      "addressRequired": "Address is required",
+      "addressDetailed": "Please enter a more detailed address",
+      "cityRequired": "City is required",
+      "phoneRequired": "Phone number is required",
+      "phoneValid": "Please enter a valid phone number (5XX XXX XX XX)"
+    },
+    "labels": {
+      "fullName": "Full Name *",
+      "address": "Address *",
+      "city": "City *",
+      "phone": "Phone *",
+      "notes": "Order Notes (Optional)"
+    },
+    "placeholders": {
+      "fullName": "Your name and surname",
+      "address": "Street, apartment, floor, door number, and door code if any",
+      "city": "City/District",
+      "phone": "5XX XXX XX XX",
+      "notes": "Cash on delivery, delivery time, special notes..."
+    },
+    "ariaLabels": {
+      "cartButton": "My Cart",
+      "close": "Close",
+      "decreaseQuantity": "Decrease quantity",
+      "increaseQuantity": "Increase quantity",
+      "removeItem": "Remove item"
+    }
+  },
+  "fragranceSession": {
+    "title": "SPECIAL FRAGRANCE SESSION",
+    "description": {
+      "line1": "A table composed of scent notes;",
+      "line2": "With essences, bases and chords,",
+      "line3": "designed for you to create your signature scent,",
+      "line4": "a special fragrance journey"
+    },
+    "experience": {
+      "title": "Fragrance Session Experience",
+      "intro": "This experience, aimed at personal perfume creation, brings together discovery and experimentation, aiming to decode the individual's deepest language and transform it into a scent",
+      "essenceDiscovery": "Essence Discovery:",
+      "points": {
+        "analysis": "Begins with a short analysis form to understand the person's scent memory",
+        "formBasis": "This form constitutes the foundation of the perfume design process",
+        "profile": "Then, intuitive exploration of essences begins to determine the personal scent profile",
+        "reference": "You create your personal scent profile by selecting your own reference notes"
+      },
+      "formula": "Formula Development:",
+      "formulaPoints": {
+        "guidance": "Under the guidance of the perfume designer, an original formula is created with base, heart and top layers from the notes you selected"
+      },
+      "bottling": "Bottling:",
+      "bottlingPoints": {
+        "personalization": "Your personal perfume is filled into our special bottle and personalized with the name you choose."
+      }
+    },
+    "form": {
+      "title": "Create Your Appointment",
+      "selectDate": "Select Date",
+      "selectTime": "Select Time",
+      "fullName": "Your Full Name",
+      "email": "Your Email Address",
+      "phone": "Your Phone Number",
+      "notes": "Your special notes (optional)",
+      "notesPlaceholder": "Your scent preferences or special requests...",
+      "submit": "CREATE YOUR APPOINTMENT",
+      "submitting": "SUBMITTING...",
+      "formNote": {
+        "part1": "We will contact you for appointment confirmation.",
+        "instagram": "Our Instagram page",
+        "part2": "don't forget to follow!"
+      }
+    },
+    "alerts": {
+      "dateRequired": "Please select a date first.",
+      "timeRequired": "Please select date and time.",
+      "dateFull": "Maximum 3 appointments are full for this date. Please select another date.",
+      "timeSlotFull": "This time slot is full. Please select another time.",
+      "success": "Your appointment has been successfully created! We will get back to you as soon as possible.",
+      "error": "An error occurred. Please try again later."
+    },
+    "weekDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "closeButton": "Close"
   }
 }

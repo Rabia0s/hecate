@@ -1,29 +1,31 @@
 // InstagramGallery.jsx
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './InstagramGallery.css';
 
 const InstagramGallery = () => {
   const ref = useRef();
   const isInView = useInView(ref, { once: false, amount: 0.1 });
+  const { t } = useTranslation();
 
   const instagramPosts = [
     { 
       id: 1, 
       image: `${process.env.PUBLIC_URL}/images/insphoto1.jpeg`,
-      caption: "Lüks Parfüm Koleksiyonu",
+      caption: t('instagram.caption1'),
       delay: 0.1
     },
     { 
       id: 2, 
       image: `${process.env.PUBLIC_URL}/images/insphoto2.jpeg`,
-      caption: "Özel Seri",
+      caption: t('instagram.caption2'),
       delay: 0.2
     },
     { 
       id: 3, 
       image: `${process.env.PUBLIC_URL}/images/insphoto3.jpeg`,
-      caption: "Boutique Deneyimi",
+      caption: t('instagram.caption3'),
       delay: 0.3
     }
   ];
@@ -61,10 +63,10 @@ const InstagramGallery = () => {
           variants={containerVariants}
         >
           <motion.h2 className="section-title" variants={itemVariants}>
-            <span className="gold-gradient">#HecatePerfume</span>
+            <span className="gold-gradient">{t('instagram.hashtag')}</span>
           </motion.h2>
           <motion.p className="section-subtitle" variants={itemVariants}>
-            Bir damla koku, içindeki tanrıçayı hatırlatabilir
+            {t('instagram.quote')}
           </motion.p>
         </motion.div>
 
@@ -89,13 +91,12 @@ const InstagramGallery = () => {
                 src={post.image} 
                 alt={`Instagram: ${post.caption}`}
                 className="gallery-image"
-                loading="eager" /* Daha hızlı yükleme */
+                loading="eager"
                 onError={(e) => {
                   e.target.src = `${process.env.PUBLIC_URL}/images/logo.png`;
                   console.error("Fotoğraf yüklenemedi:", post.image);
                 }}
                 onLoad={(e) => {
-                  // Görüntü yüklendiğinde netliği artır
                   e.target.style.filter = 'brightness(1.1) contrast(1.15)';
                 }}
               />
@@ -125,7 +126,7 @@ const InstagramGallery = () => {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          <span>Bizi Takip Edin</span>
+          <span>{t('instagram.followButton')}</span>
           <div className="button-hover-effect"></div>
         </motion.a>
       </div>

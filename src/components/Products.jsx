@@ -1,4 +1,4 @@
-// Products.js - Ürün Yayınlama Bildirimi Eklendi
+// Products.js - Tamamen Çevrildi
 import React, { useState, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import ProductCard from './ProductCard';
@@ -18,7 +18,7 @@ const Products = () => {
       concentration: "Extrait de Parfum",
       price: 2150,
       originalPrice: 2500,
-      image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg", // Yerel dosya yolu
+      image: process.env.PUBLIC_URL + "/images/IMG_0770.jpg",
       notes: ["Saffron", "Jasmine", "Vanilla"],
       limitedEdition: true,
       discount: 14,
@@ -31,7 +31,7 @@ const Products = () => {
       gender: "Woman",
       concentration: "Eau de Parfum",
       price: 980,
-      image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg", // Yerel dosya yolu
+      image: process.env.PUBLIC_URL + "/images/IMG_0769.jpg",
       notes: ["Bergamot", "Vetiver", "Amber"],
       limitedEdition: false,
       isNew: true,
@@ -43,13 +43,12 @@ const Products = () => {
       gender: "Man",
       concentration: "Eau de Parfum",
       price: 1250,
-      image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg", // Yerel dosya yolu
+      image: process.env.PUBLIC_URL + "/images/IMG_0771.jpg",
       notes: ["Oud", "Sandalwood", "Bergamot"],
       limitedEdition: false,
       isNew: false,
       rating: 4.7
     }
-    // Daha fazla ürün zamanla eklenecek
   ];
 
   const filteredProducts = useMemo(() => {
@@ -58,7 +57,7 @@ const Products = () => {
     if (activeFilter === 'women') return products.filter(p => p.gender === 'Woman' || p.gender === 'Unisex');
     if (activeFilter === 'new') return products.filter(p => p.isNew);
     return products;
-  }, [activeFilter]);
+  }, [activeFilter, products]);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -71,11 +70,11 @@ const Products = () => {
   };
 
   return (
-    <section className="products-section">
+    <section className="products-section" id="products">
       <div className="container">
         <div className="section-header">
           <div className="header-content">
-            <h1 className="section-title">{t('products.title', 'Parfümler')}</h1>
+            <h1 className="section-title">{t('products.title')}</h1>
           </div>
           
           <div className="controls">
@@ -84,28 +83,27 @@ const Products = () => {
                 className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
                 onClick={() => setActiveFilter('all')}
               >
-                Tümü
+                {t('products.filter_all')}
               </button>
               <button 
                 className={`filter-btn ${activeFilter === 'men' ? 'active' : ''}`}
                 onClick={() => setActiveFilter('men')}
               >
-                Erkek
+                {t('products.filter_men')}
               </button>
               <button 
                 className={`filter-btn ${activeFilter === 'women' ? 'active' : ''}`}
                 onClick={() => setActiveFilter('women')}
               >
-                Kadın
+                {t('products.filter_women')}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Alt Bilgilendirme - Üst kısma taşındı */}
         <div className="products-footer">
           <p className="footer-notice">
-            💫 <strong>Koleksiyonumuz büyüyor!</strong> Yeni özel parfümler yakında eklenecek.
+            {t('products.collection_growing')} <strong>{t('products.new_coming_soon')}</strong>
           </p>
         </div>
 
@@ -113,7 +111,7 @@ const Products = () => {
           <button 
             className="nav-btn left" 
             onClick={() => scroll(-1)}
-            aria-label="Önceki ürünler"
+            aria-label={t('products.previous_products', 'Önceki ürünler')}
           >
             ←
           </button>
@@ -134,16 +132,16 @@ const Products = () => {
                   <div className="coming-soon-card">
                     <div className="coming-soon-placeholder">
                       <div className="placeholder-icon">⏳</div>
-                      <h3>Yakında</h3>
-                      <p>Yeni parfümler geliyor</p>
+                      <h3>{t('products.coming_soon')}</h3>
+                      <p>{t('products.new_perfumes_coming')}</p>
                     </div>
                   </div>
                   
                   <div className="coming-soon-card">
                     <div className="coming-soon-placeholder">
                       <div className="placeholder-icon">✨</div>
-                      <h3>Yakında</h3>
-                      <p>Özel koleksiyon</p>
+                      <h3>{t('products.coming_soon')}</h3>
+                      <p>{t('products.special_collection')}</p>
                     </div>
                   </div>
                 </>
@@ -154,7 +152,7 @@ const Products = () => {
           <button 
             className="nav-btn right" 
             onClick={() => scroll(1)}
-            aria-label="Sonraki ürünler"
+            aria-label={t('products.next_products', 'Sonraki ürünler')}
           >
             →
           </button>
