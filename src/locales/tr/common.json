@@ -2,7 +2,7 @@
   "navbar": {
     "home": "Ana Sayfa",
     "products": "Ürünler",
-    "event": "Atölyeler",
+    "workshops": "Atölyeler",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "menuToggle": "Menüyü Aç/Kapat",
@@ -11,6 +11,61 @@
   "search": {
     "placeholder": "Ara...",
     "emptyWarning": "Lütfen bir arama terimi girin"
+  },
+  "workshops": {
+    "title": "Atölyeler",
+    "upcoming": "Yaklaşan Atölyeler",
+    "past": "Geçmiş Atölyeler",
+    "featured": "🔥 Öne Çıkan",
+    "capacity": "kişilik yer kaldı",
+    "bookNow": "Hemen Katıl",
+    "details": "Detaylar",
+    "reservation": "Rezervasyon",
+    "whatsappBooking": "📱 WhatsApp ile Onayla",
+    "included": "✅ Dahil Olanlar",
+    "highlights": "🎯 Atölye İçeriği",
+    "paymentInfo": "💳 Ödeme Bilgileri",
+    "importantNotes": "📌 Önemli Notlar",
+    "heroDescription": "Kırmızının tutku dolu dünyasında kendi imzanı yarat. 13 Kasım'da Pasta Kodu Karşıyaka'da seni unutulmaz bir deneyim bekliyor. Profesyonel eğitmenler eşliğinde kendi özel kokunu oluştur.",
+    "workshopDescription": "Bu atölyede yalnızca esansları karıştırmayacaksın — bir parfümün doğuş sürecine tanıklık edeceksin.\n\nKatılımcılar, parfüm tasarımının temel prensiplerini ve parfüm piramidinin gizemli yapısını öğrenecek; üst, kalp ve baz notaların nasıl uyum içinde bir kompozisyona dönüştüğünü deneyimleyecekler.\n\nHer katılımcı, özenle seçilmiş esanslardan yola çıkarak kendi koku profilini oluşturacak ve sonunda tamamen kendisine ait bir kişisel parfüm formüle edecek.\n\nAtölye boyunca, bir parfümü tasarlarken denge, oran ve duygusal armoninin nasıl kurulduğunu öğreneceksin. Koku tarihi ve hafızasına değinecek, eğlenceli bir atmosferde imza kokunu yaratacaksın.\n\nYani yalnızca bir koku yaratmayacak — bir tasarımcı gibi düşünecek, bir koku sanatçısı gibi hissedeceksin. 🎈",
+    "paymentDetails": {
+      "bank": "Banka",
+      "iban": "IBAN",
+      "receiver": "Alıcı",
+      "note": "Açıklama"
+    },
+    "importantNotesList": {
+      "location": "📍 Yer: Pasta Kodu Karşıyaka",
+      "fee": "💰 Katılım Ücreti: 2500 TL (Tüm malzemeler + kişisel parfüm şişesi dahil)",
+      "limited": "📅 Sınırlı kontenjan - yerinizi ayırtın!",
+      "duration": "⏰ Süre: 3 saat",
+      "capacity": "👥 Kapasite: 12 kişi"
+    },
+    "bookingForm": {
+      "title": "Rezervasyon Formu",
+      "name": "Ad Soyad *",
+      "email": "E-posta *",
+      "phone": "Telefon *",
+      "participants": "Katılımcı Sayısı",
+      "person": "kişi",
+      "people": "kişi",
+      "summary": "Özet",
+      "workshopFee": "Atölye Ücreti:",
+      "participantCount": "Katılımcı Sayısı:",
+      "total": "Toplam:",
+      "submit": "📱 WhatsApp ile Rezervasyon Onayla"
+    },
+    "modal": {
+      "dateTime": "Tarih & Saat",
+      "location": "Lokasyon",
+      "duration": "Süre",
+      "fee": "Ücret",
+      "close": "Kapat"
+    },
+    "emptyState": {
+      "title": "Yakında Yeni Atölyeler",
+      "message": "Yeni etkinliklerimizden haberdar olmak için takipte kalın."
+    }
   },
   "hero": {
     "brand": "HECATE PERFUME",
@@ -113,7 +168,7 @@
     "imageAlt4": "Hecate Parfüm Şişesi 4",
     "contactModal": {
       "title": "İletişim Bilgileri",
-      "subtitle": "Aşağıdaki kanallardan herhangi biri aracılığıyla bize ulaşın.",
+      "subtitle": "Aşağıdaki kanallardan herhangi birı aracılığıyla bize ulaşın.",
       "address": "Adres",
       "addressValue": "Ataşehir, İzmir",
       "phone": "Telefon",

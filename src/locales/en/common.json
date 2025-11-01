@@ -2,7 +2,7 @@
   "navbar": {
     "home": "Home",
     "products": "Products",
-    "event": "Workshops",
+    "workshops": "Workshops",
     "about": "About Us",
     "contact": "Contact",
     "menuToggle": "Toggle navigation",
@@ -11,6 +11,61 @@
   "search": {
     "placeholder": "Search...",
     "emptyWarning": "Please enter a search term"
+  },
+  "workshops": {
+    "title": "Workshops",
+    "upcoming": "Upcoming Workshops",
+    "past": "Past Workshops",
+    "featured": "🔥 Featured",
+    "capacity": "spots left",
+    "bookNow": "Book Now",
+    "details": "Details",
+    "reservation": "Reservation",
+    "whatsappBooking": "📱 Confirm via WhatsApp",
+    "included": "✅ Included",
+    "highlights": "🎯 Workshop Content",
+    "paymentInfo": "💳 Payment Information",
+    "importantNotes": "📌 Important Notes",
+    "heroDescription": "Create your signature in the passionate world of red. An unforgettable experience awaits you at Pasta Kodu Karşıyaka on November 13th. Create your own special scent with professional instructors.",
+    "workshopDescription": "In this workshop, you won't just mix essences — you'll witness the birth process of a perfume.\n\nParticipants will learn the basic principles of perfume design and the mysterious structure of the perfume pyramid; they will experience how top, heart, and base notes transform into a harmonious composition.\n\nEach participant will create their own scent profile starting from carefully selected essences and will finally formulate a personal perfume that belongs entirely to them.\n\nThroughout the workshop, you will learn how balance, proportion, and emotional harmony are established when designing a perfume. You'll touch upon scent history and memory, creating your signature scent in a fun atmosphere.\n\nSo you won't just create a scent — you'll think like a designer, feel like a scent artist. 🎈",
+    "paymentDetails": {
+      "bank": "Bank",
+      "iban": "IBAN",
+      "receiver": "Receiver",
+      "note": "Note"
+    },
+    "importantNotesList": {
+      "location": "📍 Location: Pasta Kodu Karşıyaka",
+      "fee": "💰 Participation Fee: 2500 TL (All materials + personal perfume bottle included)",
+      "limited": "📅 Limited capacity - reserve your spot!",
+      "duration": "⏰ Duration: 3 hours",
+      "capacity": "👥 Capacity: 12 people"
+    },
+    "bookingForm": {
+      "title": "Booking Form",
+      "name": "Full Name *",
+      "email": "Email *",
+      "phone": "Phone *",
+      "participants": "Number of Participants",
+      "person": "person",
+      "people": "people",
+      "summary": "Summary",
+      "workshopFee": "Workshop Fee:",
+      "participantCount": "Number of Participants:",
+      "total": "Total:",
+      "submit": "📱 Confirm Reservation via WhatsApp"
+    },
+    "modal": {
+      "dateTime": "Date & Time",
+      "location": "Location",
+      "duration": "Duration",
+      "fee": "Fee",
+      "close": "Close"
+    },
+    "emptyState": {
+      "title": "New Workshops Coming Soon",
+      "message": "Stay tuned for our upcoming events and workshops."
+    }
   },
   "hero": {
     "brand": "HECATE PERFUME",

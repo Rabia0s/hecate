@@ -392,7 +392,7 @@ const Footer = () => {
 
               {/* WhatsApp */}
               <motion.a
-                href="https://wa.me/905380664628"
+                href="https://wa.me/905411969043"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link whatsapp"
@@ -541,7 +541,7 @@ const Footer = () => {
                 
                 <div className="contact-actions">
                   <motion.a
-                    href="https://wa.me/905380664628"
+                    href="https://wa.me/905411969043"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-action-btn whatsapp-btn"
@@ -554,7 +554,7 @@ const Footer = () => {
                   </motion.a>
                   
                   <motion.a
-                    href="tel:+905380664628"
+                    href="tel:+905411969043"
                     className="contact-action-btn call-btn"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

@@ -1,13 +1,17 @@
+// components/Navbar.jsx - TAM BİRLEŞTİRİLMİŞ VERSİYON
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ scrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,6 +29,29 @@ const Navbar = () => {
     }
     return () => document.body.classList.remove('menu-open');
   }, [menuOpen]);
+
+  // Navigation state'ini dinle - ana sayfada scroll yapmak için
+  useEffect(() => {
+    if (location.state?.scrollTo && location.pathname === '/') {
+      const sectionId = location.state.scrollTo;
+      
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+          const offset = 80;
+          
+          window.scrollTo({
+            top: elementTop - offset,
+            behavior: location.state.scrollBehavior || 'smooth'
+          });
+          
+          // State'i temizle (geri butonu için)
+          window.history.replaceState({ ...window.history.state, scrollTo: null }, '');
+        }
+      }, 150);
+    }
+  }, [location]);
 
   // Gelişmiş metin arama fonksiyonu
   const searchInPage = (searchTerm) => {
@@ -104,8 +131,8 @@ const Navbar = () => {
         'contact': 'contact',
         'hakkında': 'about',
         'about': 'about',
-        'atölye': 'events',
-        'workshop': 'events',
+        'atölye': 'workshops',
+        'workshops': 'workshops',
         'etkinlik': 'events',
         'event': 'events',
         'ana sayfa': 'home',
@@ -114,12 +141,7 @@ const Navbar = () => {
 
       const matchedSection = sectionMap[searchTerm];
       if (matchedSection) {
-        const sectionElement = document.getElementById(matchedSection);
-        if (sectionElement) {
-          sectionElement.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          alert(`"${searchTerm}" ile ilgili içerik bulundu ama ilgili bölüm sayfada mevcut değil.`);
-        }
+        handleNavigation(matchedSection);
       } else {
         alert(`"${searchTerm}" ile eşleşen bir içerik bulunamadı.\n\nAşağıdaki terimleri deneyebilirsiniz:\n• parfüm, ürün, koleksiyon\n• müşteri, yorum\n• iletişim\n• hakkında\n• atölye, etkinlik`);
       }
@@ -129,14 +151,58 @@ const Navbar = () => {
     setMenuOpen(false);
   };
   
+  // GÜNCELLENMİŞ handleNavigation fonksiyonu
   const handleNavigation = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    const currentPath = window.location.pathname;
+    
+    // Menüyü kapat
     setMenuOpen(false);
+
+    // Eğer sectionId bir route ise navigate kullan
+    if (sectionId === 'workshops') {
+      navigate('/workshops');
+      return;
+    }
+    
+    // Eğer home ise
+    if (sectionId === 'home') {
+      // Zaten ana sayfadaysa en üste scroll yap
+      if (currentPath === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Ana sayfada değilse ana sayfaya git
+        navigate('/');
+      }
+      return;
+    }
+    
+    // Ana sayfadaysa ve sectionId bir sayfa içi bölüm ise
+    if (currentPath === '/') {
+      // Küçük bir gecikme ile DOM'un güncellenmesini bekle
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+          const offset = 80; // Navbar yüksekliği kadar offset
+          
+          window.scrollTo({
+            top: elementTop - offset,
+            behavior: 'smooth'
+          });
+        } else {
+          // Element bulunamazsa en üste scroll yap
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Ana sayfada değilse önce ana sayfaya git, state ile scroll hedefini belirt
+      navigate('/', { 
+        state: { 
+          scrollTo: sectionId,
+          scrollBehavior: 'smooth'
+        } 
+      });
+    }
   };
 
   const toggleSubmenu = (itemKey) => {
@@ -160,7 +226,7 @@ const Navbar = () => {
         { key: 'diffuser', id: 'Reed Diffuser', label: 'Reed Diffuser' }
       ]
     },
-    { key: 'event', id: 'events', translationKey: 'navbar.event' },
+    { key: 'workshops', id: 'workshops', translationKey: 'Workshops' },
     { key: 'about', id: 'about', translationKey: 'navbar.about' },
     { key: 'contact', id: 'contact', translationKey: 'navbar.contact' }
   ];
